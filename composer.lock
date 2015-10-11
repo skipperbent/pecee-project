@@ -1,0 +1,154 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "371e0a670396e5f797220b681eef9640",
+    "content-hash": "8113bffc6d4b515ef678f5ad8a40843b",
+    "packages": [
+        {
+            "name": "pecee/framework",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skipperbent/pecee.git",
+                "reference": "b15415c27b18309d26f37cd128d7ba4dd88b00b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/b15415c27b18309d26f37cd128d7ba4dd88b00b6",
+                "reference": "b15415c27b18309d26f37cd128d7ba4dd88b00b6",
+                "shasum": ""
+            },
+            "require": {
+                "pecee/simple-router": "1.*",
+                "vlucas/phpdotenv": "2.0"
+            },
+            "require-dev": {
+                "pecee/simple-router": "1.*",
+                "vlucas/phpdotenv": "2.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Sessingø",
+                    "email": "simon.sessingoe@gmail.com"
+                }
+            ],
+            "description": "Lightspeed Framework.",
+            "homepage": "http://www.pecee.dk",
+            "keywords": [
+                "framework",
+                "lightspeed",
+                "pecee"
+            ],
+            "time": "2015-10-11 09:04:07"
+        },
+        {
+            "name": "pecee/simple-router",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skipperbent/simple-php-router.git",
+                "reference": "8064b5f536d65fddc134d24894ebc3b31b6913bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/8064b5f536d65fddc134d24894ebc3b31b6913bd",
+                "reference": "8064b5f536d65fddc134d24894ebc3b31b6913bd",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.7.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pecee\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Sessingø",
+                    "email": "simon.sessingoe@gmail.com"
+                }
+            ],
+            "description": "Simple, fast PHP router that is easy to get integrated and in almost any project. Heavily inspired by the Laravel router.",
+            "keywords": [
+                "laravel",
+                "pecee",
+                "router",
+                "routing"
+            ],
+            "time": "2015-10-11 09:36:39"
+        },
+        {
+            "name": "vlucas/phpdotenv",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "058b9b03b945b6c3eced241935c45822fd2bf4e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/058b9b03b945b6c3eced241935c45822fd2bf4e8",
+                "reference": "058b9b03b945b6c3eced241935c45822fd2bf4e8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dotenv\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "http://www.vancelucas.com"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "homepage": "http://github.com/vlucas/phpdotenv",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "time": "2015-05-29 20:43:19"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

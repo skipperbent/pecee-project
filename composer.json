@@ -1,0 +1,24 @@
+{
+ 	"name": "pecee/pecee",
+ 	"description": "Pecee Framework.",
+ 	"keywords": [
+		"framework",
+		"pecee"
+	],
+	"license": "MIT",
+	"type": "project",
+	"require": {
+		"pecee/framework": "1.*"
+	},
+	"require-dev": {
+		"pecee/framework": "1.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Pecee\\": "lib/"
+		}
+	},
+	"config": {
+		"preferred-install": "dist"
+	}
+}

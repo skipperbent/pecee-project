@@ -7,7 +7,7 @@ $site = \Pecee\UI\Site::GetInstance();
 $key->set('AppName', 'Demo');
 
 // Debug mode enabled
-$site->setDebug(TRUE);
+$site->setDebug(true);
 
 /* Database */
 $key->set('DBUsername', 'root');

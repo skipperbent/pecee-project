@@ -34,7 +34,7 @@ For a demonstration app, please look inside the app folder. This folder is not u
 
 ```
 cd /path/to/project
-git clone https://sessingo@bitbucket.org/sessingo/pecee-project.git
+git clone https://github.com/skipperbent/pecee-project.git
 composer install
 ```
 

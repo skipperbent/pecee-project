@@ -20,7 +20,7 @@
             <tr>
                 <td><?= $company->getName(); ?></td>
                 <td>
-                    <a href="<?= url('ControllerDefault@companies', ['id' => $company->getId()]); ?>">Edit</a> - Delete
+                    <a href="<?= url('companies', ['id' => $company->getId()]); ?>">Edit</a> - Delete
                 </td>
             </tr>
             <? endforeach; ?>

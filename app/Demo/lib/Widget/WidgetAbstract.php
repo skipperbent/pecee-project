@@ -23,9 +23,9 @@ abstract class WidgetAbstract extends Widget {
 
 		$this->mainMenu = new Menu();
 		$this->mainMenu->addClass('nav navbar-nav');
-		$this->mainMenu->addItem('Home', url('ControllerDefault@index'));
-		$this->mainMenu->addItem('Companies', url('ControllerDefault@companies', ['id' => '']));
-		$this->mainMenu->addItem('Contact', url('ControllerDefault@contact'));
+		$this->mainMenu->addItem('Home', url('home'));
+		$this->mainMenu->addItem('Companies', url('companies', ['id' => '']));
+		$this->mainMenu->addItem('Contact', url('contact'));
 	}
 
 	public function showFlash($formName=NULL) {

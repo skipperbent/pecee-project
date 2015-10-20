@@ -1,6 +1,6 @@
 <?php
 namespace Demo\Controller;
-use Demo\Widget\WidgetAbout;
+use Demo\Widget\WidgetCompanies;
 use Demo\Widget\WidgetContact;
 use Demo\Widget\WidgetHome;
 use Pecee\Controller\Controller;
@@ -11,8 +11,12 @@ class ControllerDefault extends Controller {
 		echo new WidgetHome();
 	}
 
-	public function getAbout() {
-		echo new WidgetAbout();
+	public function getCompanies($companyId = null) {
+		echo new WidgetCompanies($companyId);
+	}
+
+	public function postCompanies($companyId = null) {
+		echo new WidgetCompanies($companyId);
 	}
 
 	public function getContact() {

@@ -24,12 +24,12 @@ abstract class WidgetAbstract extends Widget {
 		$this->mainMenu = new Menu();
 		$this->mainMenu->addClass('nav navbar-nav');
 		$this->mainMenu->addItem('Home', url('ControllerDefault@index'));
-		$this->mainMenu->addItem('About', url('ControllerDefault@about'));
+		$this->mainMenu->addItem('Companies', url('ControllerDefault@companies', ['id' => '']));
 		$this->mainMenu->addItem('Contact', url('ControllerDefault@contact'));
 	}
 
 	public function showFlash($formName=NULL) {
-		$o=$this->showMessages('error', $formName);
+		$o=$this->showMessages('danger', $formName);
 		$o.=$this->showMessages('warning', $formName);
 		$o.=$this->showMessages('info', $formName);
 		$o.=$this->showMessages('success', $formName);
@@ -39,14 +39,14 @@ abstract class WidgetAbstract extends Widget {
 	public function showMessages($type, $formName = NULL) {
 		if(is_null($formName) || is_null($this->getFormName()) || $formName == $this->getFormName()) {
 			if($this->hasMessages($type)) {
-				$o = sprintf('<div class="msg %s"><div class="txt">', $type);
+				$o = sprintf('<div class="alert alert-%s">', $type);
 				$msg=array();
 				/* @var $error \Pecee\UI\Form\FormMessage */
 				foreach($this->getMessages($type) as $error) {
 					$msg[] = sprintf('%s', $error->getMessage());
 				}
 
-				$o .= join('<br/>', $msg) . '</div></div>';
+				$o .= join('<br/>', $msg) . '</div>';
 				return $o;
 			}
 		}

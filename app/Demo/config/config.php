@@ -12,9 +12,9 @@ $key->set('AppName', 'Demo');
 $site->setDebug(true);
 
 /* Database */
-$key->set(Pdo::SETTINGS_CONNECTION_STRING, 'mysql:host=localhost;dbname=testdb;charset=utf8');
+$key->set(Pdo::SETTINGS_CONNECTION_STRING, 'mysql:host=localhost;dbname=test;charset=utf8');
 $key->set(Pdo::SETTINGS_USERNAME, 'root');
-$key->set(Pdo::SETTINGS_PASSWORD, '123456');
+$key->set(Pdo::SETTINGS_PASSWORD, '');
 
 /* Site main language */
 Locale::getInstance()->setLocale('da-DK');

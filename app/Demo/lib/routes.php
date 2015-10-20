@@ -6,7 +6,7 @@
 use Pecee\Router;
 
 Router::get('/', 'ControllerDefault@index');
-Router::get('/about', 'ControllerDefault@about');
+Router::all('/companies/{id}', 'ControllerDefault@companies');
 Router::get('/contact', 'ControllerDefault@contact');
 
 Router::addExceptionHandler('\Demo\Handler\CustomExceptionHandler');

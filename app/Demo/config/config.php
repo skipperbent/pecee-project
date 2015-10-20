@@ -1,6 +1,8 @@
 <?php
-$key = \Pecee\Registry::GetInstance();
-$site = \Pecee\UI\Site::GetInstance();
+use Pecee\Db\Pdo;
+use Pecee\Locale;
+$key = \Pecee\Registry::getInstance();
+$site = \Pecee\UI\Site::getInstance();
 /* ---------- Configuration start ---------- */
 
 // Your custom namespace
@@ -10,14 +12,13 @@ $key->set('AppName', 'Demo');
 $site->setDebug(true);
 
 /* Database */
-$key->set('DBUsername', 'root');
-$key->set('DBPassword', '123456');
-$key->set('DBHost', '127.0.0.1');
-$key->set('DBDatabase', 'City2');
+$key->set(Pdo::SETTINGS_CONNECTION_STRING, 'mysql:host=localhost;dbname=testdb;charset=utf8');
+$key->set(Pdo::SETTINGS_USERNAME, 'root');
+$key->set(Pdo::SETTINGS_PASSWORD, '123456');
 
 /* Site main language */
-\Pecee\Locale::GetInstance()->setLocale('da-DK');
-\Pecee\Locale::GetInstance()->setDefaultLocale('da-DK');
+Locale::getInstance()->setLocale('da-DK');
+Locale::getInstance()->setDefaultLocale('da-DK');
 
 // Add IP's that are allowed to debug, clear-cache etc.
 $site->addAdminIp('127.0.0.1');

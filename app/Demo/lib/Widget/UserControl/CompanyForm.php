@@ -13,6 +13,8 @@ class CompanyForm extends WidgetAbstract {
     public function __construct($companyId = null) {
         parent::__construct();
 
+        $this->setTemplate(null);
+
         $this->company = ModelCompany::getById($companyId);
 
         if($this->isPostBack()) {

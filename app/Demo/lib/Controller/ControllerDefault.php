@@ -7,19 +7,15 @@ use Pecee\Controller\Controller;
 
 class ControllerDefault extends Controller {
 
-	public function getIndex() {
+	public function index() {
 		echo new WidgetHome();
 	}
 
-	public function getCompanies($companyId = null) {
+	public function companies($companyId = null) {
 		echo new WidgetCompanies($companyId);
 	}
 
-	public function postCompanies($companyId = null) {
-		echo new WidgetCompanies($companyId);
-	}
-
-	public function getContact() {
+	public function contact() {
 		echo new WidgetContact();
 	}
 

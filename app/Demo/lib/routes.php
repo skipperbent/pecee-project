@@ -5,8 +5,8 @@
 
 use Pecee\Router;
 
-Router::get('/', 'ControllerDefault@index');
-Router::get('/about', 'ControllerDefault@about');
-Router::get('/contact', 'ControllerDefault@contact');
+Router::get('/', 'ControllerDefault@index')->setAlias('home');
+Router::get('/contact', 'ControllerDefault@contact')->setAlias('contact');
+Router::match(['get', 'post'], '/companies/{id}', 'ControllerDefault@companies')->setAlias('companies');
 
 Router::addExceptionHandler('\Demo\Handler\CustomExceptionHandler');

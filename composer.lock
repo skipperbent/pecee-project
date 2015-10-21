@@ -4,20 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "aa34e66d5a21bf2de55874edc3301157",
+    "hash": "371e0a670396e5f797220b681eef9640",
+    "content-hash": "8113bffc6d4b515ef678f5ad8a40843b",
     "packages": [
         {
             "name": "pecee/framework",
-            "version": "1.0.2.2",
+            "version": "1.0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/pecee.git",
-                "reference": "4862f331b07119b683e36bb2fcb6ae5354d461cc"
+                "reference": "a802e49f565a20647b92f3b7c352b5f35a5d851a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/4862f331b07119b683e36bb2fcb6ae5354d461cc",
-                "reference": "4862f331b07119b683e36bb2fcb6ae5354d461cc",
+                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/a802e49f565a20647b92f3b7c352b5f35a5d851a",
+                "reference": "a802e49f565a20647b92f3b7c352b5f35a5d851a",
                 "shasum": ""
             },
             "require": {
@@ -46,20 +47,20 @@
                 "lightspeed",
                 "pecee"
             ],
-            "time": "2015-10-14 18:31:13"
+            "time": "2015-10-19 06:04:56"
         },
         {
             "name": "pecee/simple-router",
-            "version": "1.0.2.1",
+            "version": "1.0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/simple-php-router.git",
-                "reference": "b6f0f6899aaa0ea0413400a7736468e8594bb687"
+                "reference": "37b8090daca583a13e583bc407a1e0d9bd6af6b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/b6f0f6899aaa0ea0413400a7736468e8594bb687",
-                "reference": "b6f0f6899aaa0ea0413400a7736468e8594bb687",
+                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/37b8090daca583a13e583bc407a1e0d9bd6af6b2",
+                "reference": "37b8090daca583a13e583bc407a1e0d9bd6af6b2",
                 "shasum": ""
             },
             "require-dev": {
@@ -88,7 +89,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2015-10-14 18:48:17"
+            "time": "2015-10-18 21:20:14"
         },
         {
             "name": "vlucas/phpdotenv",

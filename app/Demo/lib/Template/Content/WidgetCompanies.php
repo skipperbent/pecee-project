@@ -18,9 +18,9 @@
         <tbody>
             <? foreach($this->companies->getRows() as $company) : ?>
             <tr>
-                <td><?= $company->getName(); ?></td>
+                <td><?= $company->name; ?></td>
                 <td>
-                    <a href="<?= url('companies', ['id' => $company->getId()]); ?>">Edit</a> - Delete
+                    <a href="<?= url('companies', ['id' => $company->id ]); ?>">Edit</a> - Delete
                 </td>
             </tr>
             <? endforeach; ?>

@@ -6,11 +6,11 @@
 
     <?= $this->form()->start('edit'); ?>
 
-    <h3>Edit company: <?= $this->company->getName(); ?></h3>
+    <h3>Edit company: <?= $this->company->name; ?></h3>
 
     <div class="form-group">
         <label for="email">Company name:</label>
-        <?= $this->form()->input('name', 'text', $this->company->getName(), true)->addClass('form-control')->addAttribute('id', 'email'); ?>
+        <?= $this->form()->input('name', 'text', $this->company->name, true)->addClass('form-control')->addAttribute('id', 'email'); ?>
     </div>
 
     <button type="submit" class="btn btn-default">

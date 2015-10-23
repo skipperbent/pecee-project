@@ -1,5 +1,5 @@
 <?php
-use Pecee\Db\Pdo;
+use Pecee\DB\Pdo;
 use Pecee\Locale;
 $key = \Pecee\Registry::getInstance();
 $site = \Pecee\UI\Site::getInstance();

@@ -4,7 +4,7 @@ namespace Demo\Widget\UserControl;
 
 use Demo\Model\ModelCompany;
 use Demo\Widget\WidgetAbstract;
-use Pecee\UI\Form\Validate\ValidateInputNotNullOrEmpty;
+use Pecee\Http\Input\Validation\ValidateInputNotNullOrEmpty;
 
 class CompanyForm extends WidgetAbstract {
 
@@ -19,14 +19,13 @@ class CompanyForm extends WidgetAbstract {
 
         if($this->isPostBack()) {
 
-            // Add validation
-            $this->addInputValidation('Name', 'name', new ValidateInputNotNullOrEmpty());
+            $this->get->name->addValidation(new ValidateInputNotNullOrEmpty());
 
-            if(!$this->hasErrors()) {
+            if (!$this->hasErrors()) {
 
                 // Update if company already exists
-                if($this->company && $this->company->hasRow()) {
-                    $this->company->name = $this->data->name;
+                if ($this->company && $this->company->hasRow()) {
+                    $this->company->name = $this->input('name');
                     $this->company->update();
 
                     $this->setMessage('The company has been updated', 'success');
@@ -36,8 +35,8 @@ class CompanyForm extends WidgetAbstract {
 
                 // Otherwise create...
 
-                $company = new ModelCompany();
-                $company->name = $this->data->name;
+                $company       = new ModelCompany();
+                $company->name = $this->input('name');
                 $company->save();
 
                 $this->setMessage('The company has been saved', 'success');
@@ -45,8 +44,13 @@ class CompanyForm extends WidgetAbstract {
                 // Refresh
                 response()->refresh();
             }
-
         }
 
     }
+
+    protected function onPostback() {
+
+    }
+
+
 }

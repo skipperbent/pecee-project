@@ -1,5 +1,6 @@
 <?php
 namespace Demo\Widget;
+
 use Pecee\UI\Html\Html;
 use Pecee\UI\Menu\Menu;
 use Pecee\Widget\Widget;
@@ -28,36 +29,34 @@ abstract class WidgetAbstract extends Widget {
 		$this->mainMenu->addItem('Contact', url('contact'));
 	}
 
-	public function showFlash($formName=NULL) {
-		$o=$this->showMessages('danger', $formName);
-		$o.=$this->showMessages('warning', $formName);
-		$o.=$this->showMessages('info', $formName);
-		$o.=$this->showMessages('success', $formName);
+	public function showFlash($form = null) {
+		$o=$this->showMessages($this->errorType, $form);
+		$o.=$this->showMessages('warning', $form);
+		$o.=$this->showMessages('info', $form);
+		$o.=$this->showMessages('success', $form);
 		return $o;
 	}
 
-	public function showMessages($type, $formName = NULL) {
-		if(is_null($formName) || is_null($this->getFormName()) || $formName == $this->getFormName()) {
-			if($this->hasMessages($type)) {
-				$o = sprintf('<div class="alert alert-%s">', $type);
-				$msg=array();
-				/* @var $error \Pecee\UI\Form\FormMessage */
-				foreach($this->getMessages($type) as $error) {
-					$msg[] = sprintf('%s', $error->getMessage());
-				}
-
-				$o .= join('<br/>', $msg) . '</div>';
-				return $o;
+	public function showMessages($type, $form = null) {
+		if($this->hasMessages($type, $form)) {
+			$o = sprintf('<div class="alert alert-%s">', $type);
+			$msg=array();
+			/* @var $error \Pecee\UI\Form\FormMessage */
+			foreach($this->getMessages($type) as $error) {
+				$msg[] = sprintf('%s', $error->getMessage());
 			}
+
+			$o .= join('<br/>', $msg) . '</div>';
+			return $o;
 		}
 		return '';
 	}
 
-	protected function validationFor($name) {
-		if($this->form()->validationFor($name)) {
+	public function validationFor($name) {
+		if(parent::validationFor($name)) {
 			$span = new Html('span');
 			$span->addClass('msg error');
-			$span->setInnerHtml($this->form()->validationFor($name));
+			$span->setInnerHtml(parent::validationFor($name));
 			return $span;
 		}
 		return '';

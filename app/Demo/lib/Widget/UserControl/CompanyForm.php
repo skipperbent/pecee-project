@@ -48,9 +48,4 @@ class CompanyForm extends WidgetAbstract {
 
     }
 
-    protected function onPostback() {
-
-    }
-
-
 }

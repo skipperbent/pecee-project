@@ -19,7 +19,7 @@ class CompanyForm extends WidgetAbstract {
 
         if($this->isPostBack()) {
 
-            $this->get->name->addValidation(new ValidateInputNotNullOrEmpty());
+            $this->post->name->addValidation(new ValidateInputNotNullOrEmpty());
 
             if (!$this->hasErrors()) {
 

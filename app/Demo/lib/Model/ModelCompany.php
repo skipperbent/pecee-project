@@ -17,11 +17,11 @@ class ModelCompany extends Model {
 	}
 
 	public static function getById($id) {
-		return self::FetchOne('SELECT * FROM {table} WHERE `id` = %s', $id);
+		return self::fetchOne('SELECT * FROM {table} WHERE `id` = %s', $id);
 	}
 
 	public static function get($rows = 20, $page = 0) {
-		return self::FetchPage('SELECT * FROM {table}', $rows, $page);
+		return self::fetchPage('SELECT * FROM {table}', $rows, $page);
 	}
 
 }

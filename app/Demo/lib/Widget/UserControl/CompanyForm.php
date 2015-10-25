@@ -15,7 +15,9 @@ class CompanyForm extends WidgetAbstract {
 
         $this->setTemplate(null);
 
-        $this->company = ModelCompany::getById($companyId);
+        if($companyId !== null) {
+            $this->company = ModelCompany::getById($companyId);
+        }
 
         if($this->isPostBack()) {
 
@@ -35,7 +37,7 @@ class CompanyForm extends WidgetAbstract {
 
                 // Otherwise create...
 
-                $company       = new ModelCompany();
+                $company = new ModelCompany();
                 $company->name = $this->input('name');
                 $company->save();
 

@@ -5,9 +5,6 @@ $key = \Pecee\Registry::getInstance();
 $site = \Pecee\UI\Site::getInstance();
 /* ---------- Configuration start ---------- */
 
-// Your custom namespace
-$key->set('AppName', 'Demo');
-
 // Debug mode enabled
 $site->setDebug(true);
 

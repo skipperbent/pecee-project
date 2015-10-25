@@ -4,21 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "371e0a670396e5f797220b681eef9640",
-    "content-hash": "8113bffc6d4b515ef678f5ad8a40843b",
+    "hash": "a225afb3b5edd5bf06c5923fd46e5606",
     "packages": [
         {
             "name": "pecee/framework",
-            "version": "1.0.4.3",
+            "version": "1.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/pecee.git",
-                "reference": "a802e49f565a20647b92f3b7c352b5f35a5d851a"
+                "reference": "6b163684451bff10844c72ce74f3ad45a32793f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/a802e49f565a20647b92f3b7c352b5f35a5d851a",
-                "reference": "a802e49f565a20647b92f3b7c352b5f35a5d851a",
+                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/6b163684451bff10844c72ce74f3ad45a32793f6",
+                "reference": "6b163684451bff10844c72ce74f3ad45a32793f6",
                 "shasum": ""
             },
             "require": {
@@ -30,6 +29,11 @@
                 "vlucas/phpdotenv": "2.0"
             },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pecee\\": "src/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -40,27 +44,28 @@
                     "email": "simon.sessingoe@gmail.com"
                 }
             ],
-            "description": "Lightspeed Framework.",
+            "description": "Simple, lightweight PHP framework based on Microsoft MVVM.",
             "homepage": "http://www.pecee.dk",
             "keywords": [
+                "fast",
                 "framework",
-                "lightspeed",
-                "pecee"
+                "pecee",
+                "speed"
             ],
-            "time": "2015-10-19 06:04:56"
+            "time": "2015-10-25 00:41:29"
         },
         {
             "name": "pecee/simple-router",
-            "version": "1.0.3.1",
+            "version": "1.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/simple-php-router.git",
-                "reference": "37b8090daca583a13e583bc407a1e0d9bd6af6b2"
+                "reference": "099f04fc109c27c3e388a52147d748f95875ed8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/37b8090daca583a13e583bc407a1e0d9bd6af6b2",
-                "reference": "37b8090daca583a13e583bc407a1e0d9bd6af6b2",
+                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/099f04fc109c27c3e388a52147d748f95875ed8e",
+                "reference": "099f04fc109c27c3e388a52147d748f95875ed8e",
                 "shasum": ""
             },
             "require-dev": {
@@ -69,7 +74,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Pecee\\": "src/"
+                    "Pecee\\": "src/Pecee/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -89,7 +94,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2015-10-18 21:20:14"
+            "time": "2015-10-25 00:35:49"
         },
         {
             "name": "vlucas/phpdotenv",

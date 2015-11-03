@@ -6,7 +6,7 @@ $site = \Pecee\UI\Site::getInstance();
 /* ---------- Configuration start ---------- */
 
 // Debug mode enabled
-$site->setDebug(true);
+$site->setDebug(getenv('DEBUG'));
 
 /* Database */
 $key->set(Pdo::SETTINGS_CONNECTION_STRING, 'mysql:host='.getenv('DB_HOST').';dbname='.getenv('DB_NAME').';charset=utf8');

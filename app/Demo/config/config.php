@@ -9,9 +9,9 @@ $site = \Pecee\UI\Site::getInstance();
 $site->setDebug(true);
 
 /* Database */
-$key->set(Pdo::SETTINGS_CONNECTION_STRING, 'mysql:host=localhost;dbname=test;charset=utf8');
-$key->set(Pdo::SETTINGS_USERNAME, 'root');
-$key->set(Pdo::SETTINGS_PASSWORD, '');
+$key->set(Pdo::SETTINGS_CONNECTION_STRING, 'mysql:host='.getenv('DB_HOST').';dbname='.getenv('DB_NAME').';charset=utf8');
+$key->set(Pdo::SETTINGS_USERNAME, getenv('DB_USER'));
+$key->set(Pdo::SETTINGS_PASSWORD, getenv('DB_PASS'));
 
 /* Site main language */
 Locale::getInstance()->setLocale('da-DK');

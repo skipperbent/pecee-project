@@ -6,12 +6,12 @@ $site = \Pecee\UI\Site::getInstance();
 /* ---------- Configuration start ---------- */
 
 // Debug mode enabled
-$site->setDebug(getenv('DEBUG'));
+$site->setDebug(env('DEBUG'));
 
 /* Database */
-$key->set(Pdo::SETTINGS_CONNECTION_STRING, 'mysql:host='.getenv('DB_HOST').';dbname='.getenv('DB_NAME').';charset=utf8');
-$key->set(Pdo::SETTINGS_USERNAME, getenv('DB_USER'));
-$key->set(Pdo::SETTINGS_PASSWORD, getenv('DB_PASS'));
+$key->set(Pdo::SETTINGS_CONNECTION_STRING, 'mysql:host='.env('DB_HOST').';dbname='.env('DB_NAME').';charset=utf8');
+$key->set(Pdo::SETTINGS_USERNAME, env('DB_USER'));
+$key->set(Pdo::SETTINGS_PASSWORD, env('DB_PASS'));
 
 /* Site main language */
 Locale::getInstance()->setLocale('da-DK');

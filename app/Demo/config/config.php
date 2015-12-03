@@ -9,7 +9,7 @@ $site = \Pecee\UI\Site::getInstance();
 $site->setDebug(env('DEBUG'));
 
 /* Database */
-$key->set(Pdo::SETTINGS_CONNECTION_STRING, 'mysql:host='.env('DB_HOST').';dbname='.env('DB_NAME').';charset=utf8');
+$key->set(Pdo::SETTINGS_CONNECTION_STRING, env('DB_DRIVER').':host='.env('DB_HOST').';dbname='.env('DB_NAME').';charset=utf8');
 $key->set(Pdo::SETTINGS_USERNAME, env('DB_USER'));
 $key->set(Pdo::SETTINGS_PASSWORD, env('DB_PASS'));
 

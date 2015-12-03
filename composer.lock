@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "pecee/framework",
-            "version": "1.3.4",
+            "version": "1.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/pecee.git",
-                "reference": "6b163684451bff10844c72ce74f3ad45a32793f6"
+                "reference": "5c83347979ca4c45e658c5d1546ff2bbb9f25d92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/6b163684451bff10844c72ce74f3ad45a32793f6",
-                "reference": "6b163684451bff10844c72ce74f3ad45a32793f6",
+                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/5c83347979ca4c45e658c5d1546ff2bbb9f25d92",
+                "reference": "5c83347979ca4c45e658c5d1546ff2bbb9f25d92",
                 "shasum": ""
             },
             "require": {
@@ -52,20 +52,20 @@
                 "pecee",
                 "speed"
             ],
-            "time": "2015-10-25 00:41:29"
+            "time": "2015-12-02 17:33:16"
         },
         {
             "name": "pecee/simple-router",
-            "version": "1.2.7",
+            "version": "1.3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/simple-php-router.git",
-                "reference": "099f04fc109c27c3e388a52147d748f95875ed8e"
+                "reference": "4447a88894bcc74e01ab25b6187c0530a5ac9d96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/099f04fc109c27c3e388a52147d748f95875ed8e",
-                "reference": "099f04fc109c27c3e388a52147d748f95875ed8e",
+                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/4447a88894bcc74e01ab25b6187c0530a5ac9d96",
+                "reference": "4447a88894bcc74e01ab25b6187c0530a5ac9d96",
                 "shasum": ""
             },
             "require-dev": {
@@ -94,7 +94,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2015-10-25 00:35:49"
+            "time": "2015-11-22 19:30:49"
         },
         {
             "name": "vlucas/phpdotenv",

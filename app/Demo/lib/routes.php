@@ -6,7 +6,7 @@
 use Pecee\Router;
 
 Router::csrfVerifier(new \Demo\Middleware\CsrfVerifier());
-Router::setDefaultExceptionHandler('\Demo\Handler\CustomExceptionHandler');
+Router::defaultExceptionHandler('\Demo\Handler\CustomExceptionHandler');
 
 Router::get('/', 'ControllerDefault@index')->setAlias('home');
 Router::get('/contact', 'ControllerDefault@contact')->setAlias('contact');

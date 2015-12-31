@@ -2,11 +2,11 @@
 
 namespace Demo\Widget\UserControl;
 
+use Demo\CustomValidation\ValidateInputNotNullOrEmpty;
 use Demo\Model\ModelCompany;
-use Demo\Widget\WidgetAbstract;
-use Pecee\Http\Input\Validation\ValidateInputNotNullOrEmpty;
+use Demo\Widget\SiteAbstract;
 
-class CompanyForm extends WidgetAbstract {
+class CompanyForm extends SiteAbstract {
 
     protected $company;
 
@@ -17,6 +17,9 @@ class CompanyForm extends WidgetAbstract {
 
         if($companyId !== null) {
             $this->company = ModelCompany::getById($companyId);
+            $this->prependSiteTitle(lang('Companies.EditCompany', $this->company->name));
+        } else {
+            $this->prependSiteTitle(lang('Companies.AddCompany'));
         }
 
         if($this->isPostBack()) {
@@ -28,9 +31,10 @@ class CompanyForm extends WidgetAbstract {
                 // Update if company already exists
                 if ($this->company && $this->company->hasRow()) {
                     $this->company->name = $this->input('name');
+                    $this->company->ip = request()->getIp();
                     $this->company->update();
 
-                    $this->setMessage('The company has been updated', 'success');
+                    $this->setMessage(lang('Companies.CompanyUpdated'), 'success');
 
                     response()->refresh();
                 }
@@ -39,9 +43,10 @@ class CompanyForm extends WidgetAbstract {
 
                 $company = new ModelCompany();
                 $company->name = $this->input('name');
+                $this->company->ip = request()->getIp();
                 $company->save();
 
-                $this->setMessage('The company has been saved', 'success');
+                $this->setMessage(lang('Companies.CompanySaved'), 'success');
 
                 // Refresh
                 response()->refresh();

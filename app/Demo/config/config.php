@@ -1,23 +1,16 @@
 <?php
-use Pecee\DB\Pdo;
-use Pecee\Locale;
+
+use \Pecee\Translation;
+
 $key = \Pecee\Registry::getInstance();
 $site = \Pecee\UI\Site::getInstance();
 /* ---------- Configuration start ---------- */
 
-// Debug mode enabled
-$site->setDebug(env('DEBUG'));
-
-/* Database */
-$key->set(Pdo::SETTINGS_CONNECTION_STRING, env('DB_DRIVER').':host='.env('DB_HOST').';dbname='.env('DB_NAME').';charset=utf8');
-$key->set(Pdo::SETTINGS_USERNAME, env('DB_USER'));
-$key->set(Pdo::SETTINGS_PASSWORD, env('DB_PASS'));
-
-/* Site main language */
-Locale::getInstance()->setLocale('da-DK');
-Locale::getInstance()->setDefaultLocale('da-DK');
+// Set the framework to use XML for language
+Translation::getInstance()->setType(Translation::TYPE_XML);
 
 // Add IP's that are allowed to debug, clear-cache etc.
 $site->addAdminIp('127.0.0.1');
 $site->addAdminIp('::1');
+
 /* ---------- Configuration end ---------- */

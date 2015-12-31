@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Language name="danish" locale="da-DK">
+
+    <Home>
+        <Home>Forside</Home>
+        <WelcomeTitle>Velkommen til Pecee framework demo sitet</WelcomeTitle>
+        <WelcomeDescription>Du har nu korrekt opsat Pecee Framework demo sitet.</WelcomeDescription>
+    </Home>
+
+    <Companies>
+        <Companies>Virksomheder</Companies>
+        <AddCompany>Tilføj ny virksomhed</AddCompany>
+        <EditCompany>Rediger virksomhed %s</EditCompany>
+        <NoCompaniesAdded>Ingen virksomheder tilføjet.</NoCompaniesAdded>
+        <Name>Navn</Name>
+        <Actions>Handlinger</Actions>
+        <Delete>Slet</Delete>
+        <Add>Tilføj</Add>
+        <Edit>Rediger</Edit>
+        <Update>Opdater</Update>
+        <CompanySaved>Virksomheden er blevet gemt</CompanySaved>
+        <CompanyUpdated>Virksomheden er blevet opdateret</CompanyUpdated>
+    </Companies>
+
+    <Contact>
+        <Contact>Kontakt</Contact>
+    </Contact>
+
+    <PageNotFound>
+        <PageNotFound>Siden blev ikke fundet</PageNotFound>
+    </PageNotFound>
+
+    <Validation>
+        <Required>%s er påkrævet</Required>
+    </Validation>
+
+</Language>

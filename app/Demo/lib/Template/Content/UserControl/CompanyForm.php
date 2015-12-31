@@ -6,15 +6,15 @@
 
     <?= $this->form()->start('edit'); ?>
 
-    <h3>Edit company: <?= $this->company->name; ?></h3>
+    <h3><?= lang('Companies.EditCompany', $this->company->name); ?></h3>
 
     <div class="form-group">
-        <label for="email">Company name:</label>
-        <?= $this->form()->input('name', 'text', $this->company->name, true)->addClass('form-control')->addAttribute('id', 'email'); ?>
+        <label for="email"><?= lang('Companies.Name'); ?>:</label>
+        <?= $this->form()->input('name', 'text', $this->company->name)->addClass('form-control')->id('email'); ?>
     </div>
 
     <button type="submit" class="btn btn-default">
-        Update
+        <?= lang('Companies.Update'); ?>
     </button>
 
     <?= $this->form()->end(); ?>
@@ -23,15 +23,15 @@
 
     <?= $this->form()->start('create'); ?>
 
-        <h3>Add company</h3>
+        <h3><?= lang('Companies.AddCompany'); ?></h3>
 
         <div class="form-group">
-            <label for="email">Company name:</label>
-            <?= $this->form()->input('name', 'text', null, true)->addClass('form-control')->addAttribute('id', 'email'); ?>
+            <label for="email"><?= lang('Companies.Name'); ?>:</label>
+            <?= $this->form()->input('name', 'text')->addClass('form-control')->id('email'); ?>
         </div>
 
         <button type="submit" class="btn btn-default">
-            Add
+            <?= lang('Companies.Add'); ?>
         </button>
 
     <?= $this->form()->end(); ?>

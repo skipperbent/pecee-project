@@ -3,12 +3,12 @@ namespace Demo\Widget\Page;
 
 use Demo\Widget\WidgetAbstract;
 
-class PageNotFound extends WidgetAbstract {
+class PageNotFound extends SiteAbstract {
 
     public function __construct() {
         parent::__construct();
 
-        $this->prependSiteTitle('404: page not found');
+        $this->prependSiteTitle(lang('PageNotFound.PageNotFound'));
 
         $this->mainMenu->getItem(0)->addClass('active');
     }

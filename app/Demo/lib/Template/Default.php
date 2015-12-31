@@ -1,4 +1,4 @@
-<? /* @var $this \Demo\Widget\WidgetAbstract */ ?>
+<? /* @var $this \Demo\Widget\SiteAbstract */ ?>
 <?= \Pecee\UI\Site::GetInstance()->getDocType(); ?>
 <html>
 	<head>
@@ -14,7 +14,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<?= url('ControllerDefault@index'); ?>">Project name</a>
+					<a class="navbar-brand" href="<?= url('home'); ?>">Pecee</a>
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
 					<?= $this->mainMenu; ?>
@@ -23,11 +23,15 @@
 		</nav>
 
 		<div class="container">
-
 			<div class="starter-template">
 				<?= $this->getContentHtml(); ?>
 			</div>
+		</div>
 
-		</div><!-- /.container -->
+		<footer>
+            <div class="container">
+                <?= $this->form()->selectStart('lang', ['da_dk' => 'Dansk', 'en_uk' => 'English'], $this->getLanguage())->addAttribute('onchange', 'top.location.href=\''. url('home') .'?lang=\' + this[selectedIndex].value;'); ?>
+            </div>
+        </footer>
 	</body>
 </html>

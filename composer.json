@@ -13,11 +13,6 @@
 	"require-dev": {
 		"pecee/framework": "1.*"
 	},
-	"autoload": {
-		"psr-4": {
-			"Pecee\\": "lib/"
-		}
-	},
 	"config": {
 		"preferred-install": "dist"
 	}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Language name="danish" locale="da-DK">
+
+    <Home>
+        <Home>Home</Home>
+        <WelcomeTitle>Welcome to Pecee Framework demo site</WelcomeTitle>
+        <WelcomeDescription>You have just successfully setup the Pecee Framework demo site.</WelcomeDescription>
+    </Home>
+
+    <Companies>
+        <Companies>Companies</Companies>
+        <AddCompany>Add new company</AddCompany>
+        <EditCompany>Edit company %s</EditCompany>
+        <NoCompaniesAdded>No companies added.</NoCompaniesAdded>
+        <Name>Name</Name>
+        <Actions>Actions</Actions>
+        <Delete>Delete</Delete>
+        <Add>Add</Add>
+        <Edit>Edit</Edit>
+        <Update>Update</Update>
+        <CompanySaved>The company has been saved</CompanySaved>
+        <CompanyUpdated>The company has been updated</CompanyUpdated>
+    </Companies>
+
+    <Contact>
+        <Contact>Contact</Contact>
+    </Contact>
+
+    <PageNotFound>
+        <PageNotFound>Page not found</PageNotFound>
+    </PageNotFound>
+
+    <Validation>
+        <Required>%s is required</Required>
+    </Validation>
+
+</Language>

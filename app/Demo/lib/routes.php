@@ -5,8 +5,20 @@
 
 use Pecee\Router;
 
-Router::get('/', 'ControllerDefault@index');
-Router::get('/about', 'ControllerDefault@about');
-Router::get('/contact', 'ControllerDefault@contact');
+Router::csrfVerifier(new \Demo\Middleware\CsrfVerifier());
+Router::defaultExceptionHandler('\Demo\Handler\CustomExceptionHandler');
 
-Router::addExceptionHandler('\Demo\Handler\CustomExceptionHandler');
+Router::group(['middleware' => 'Demo\Middleware\LanguageDetection'], function() {
+
+    Router::get('/', 'DefaultController@index')->setAlias('home');
+    Router::get('/contact', 'DefaultController@contact')->setAlias('contact');
+    Router::basic('/companies', 'DefaultController@companies')->setAlias('companies');
+    Router::basic('/companies/{id}', 'DefaultController@companies')->setAlias('companies');
+
+});
+
+// Api
+
+Router::group(['prefix' => '/api'], function() {
+    Router::resource('/companies', 'Api\\CompanyController');
+});

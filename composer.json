@@ -8,12 +8,20 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"pecee/framework": "1.*"
+		"pecee/framework": "2.*"
 	},
 	"require-dev": {
-		"pecee/framework": "1.*"
+		"pecee/framework": "2.*"
 	},
 	"config": {
 		"preferred-install": "dist"
+	},
+	"scripts": {
+		"post-root-package-install": [
+			"php -r \"copy('.env.example', '.env');\""
+		],
+		"post-create-project-cmd": [
+			"php pecee key:generate"
+		]
 	}
 }

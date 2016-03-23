@@ -1,6 +1,4 @@
 <?php
-require_once '../config/init.php';
+require_once '../config/bootstrap.php';
 
-use Pecee\Router;
-
-Router::start();
+\Pecee\Router::start();

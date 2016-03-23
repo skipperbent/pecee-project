@@ -35,10 +35,16 @@ For a demonstration app, please look inside the app folder. This folder is not u
 ```
 cd /path/to/project
 git clone https://github.com/skipperbent/pecee-project.git
-composer install
+composer update
 ```
 
-Point your webserver to /path/to/project/app/www
+Point your webserver to ```/path/to/project/app/www```.
+
+## Migrations
+
+If you use migrations remember to change the project path in ```config/phinx-config.php```.
+
+Create new migration by running ```php pecee Demo migrations create CreateDemoTable```
 
 ## The MIT License (MIT)
 

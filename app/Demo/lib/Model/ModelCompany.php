@@ -3,22 +3,24 @@
 namespace Demo\Model;
 
 use Pecee\Date;
-use Pecee\DB\DBTable;
 use Pecee\Model\Model;
 
 class ModelCompany extends Model {
 
+    protected $table = 'company';
+
+    protected $columns = [
+        'id',
+        'name',
+        'ip',
+        'created'
+    ];
+
+    // Hidden on getArray - useful for json output
 	protected $hidden = ['ip'];
 
 	public function __construct() {
-
-		$table = new DBTable();
-		$table->column('id')->integer()->primary()->increment();
-		$table->column('name')->string(255);
-		$table->column('ip')->string(255);
-        $table->column('created')->datetime()->index();
-
-		parent::__construct($table);
+		parent::__construct();
 
         $this->created = Date::toDateTime();
 	}

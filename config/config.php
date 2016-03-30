@@ -6,6 +6,9 @@ $key = \Pecee\Registry::getInstance();
 $site = \Pecee\UI\Site::getInstance();
 /* ---------- Configuration start ---------- */
 
+// Example usage: Registry
+// $key->set('StuffToSave', 'ValueToRetrieve');
+
 // Set the framework to use XML for language
 Translation::getInstance()->setType(Translation::TYPE_XML);
 

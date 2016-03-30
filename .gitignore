@@ -1,4 +1,4 @@
 vendor/
 .idea/
-app/Demo/cache/*
+cache/*
 *.env

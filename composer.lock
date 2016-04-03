@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "pecee/framework",
-            "version": "3.0",
+            "version": "3.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/pecee.git",
-                "reference": "9d658280552ea3569e61f4bf216436c87dc88990"
+                "reference": "6dd843ea3cfc009917c0bfe5c54cd35cdbc68d58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/9d658280552ea3569e61f4bf216436c87dc88990",
-                "reference": "9d658280552ea3569e61f4bf216436c87dc88990",
+                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/6dd843ea3cfc009917c0bfe5c54cd35cdbc68d58",
+                "reference": "6dd843ea3cfc009917c0bfe5c54cd35cdbc68d58",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +55,7 @@
                 "pecee",
                 "speed"
             ],
-            "time": "2016-03-30 16:50:50"
+            "time": "2016-04-03 20:38:23"
         },
         {
             "name": "pecee/simple-router",

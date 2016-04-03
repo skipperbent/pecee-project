@@ -61,7 +61,7 @@ abstract class SiteAbstract extends Widget {
 		if(parent::validationFor($name)) {
 			$span = new Html('span');
 			$span->addClass('msg error');
-			$span->setInnerHtml(parent::validationFor($name));
+			$span->addInnerHtml(parent::validationFor($name));
 			return $span;
 		}
 		return '';

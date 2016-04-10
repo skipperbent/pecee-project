@@ -4,25 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d1b2b8d19fe585da2f126cfff3329050",
+    "hash": "209024e3ce57bc029cc576f9ad15dce5",
     "content-hash": "e622cfb7d89d753f1add1e1a5a024e72",
     "packages": [
         {
             "name": "pecee/framework",
-            "version": "3.1.4",
+            "version": "3.1.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/pecee.git",
-                "reference": "6dd843ea3cfc009917c0bfe5c54cd35cdbc68d58"
+                "reference": "e703b58c1848a8724ac23954913566fa64759b3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/6dd843ea3cfc009917c0bfe5c54cd35cdbc68d58",
-                "reference": "6dd843ea3cfc009917c0bfe5c54cd35cdbc68d58",
+                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/e703b58c1848a8724ac23954913566fa64759b3a",
+                "reference": "e703b58c1848a8724ac23954913566fa64759b3a",
                 "shasum": ""
             },
             "require": {
                 "pecee/simple-router": "1.*",
+                "php": ">=5.4.0",
                 "robmorgan/phinx": "^0.5.3",
                 "vlucas/phpdotenv": "2.0"
             },
@@ -55,21 +56,24 @@
                 "pecee",
                 "speed"
             ],
-            "time": "2016-04-03 20:38:23"
+            "time": "2016-04-10 13:57:00"
         },
         {
             "name": "pecee/simple-router",
-            "version": "1.6.3",
+            "version": "1.7.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/simple-php-router.git",
-                "reference": "fd5d8930402fa2e6dd7f12c2b5ae79fc13d13fab"
+                "reference": "11bd5a7d11016e3e9697636915a214ea33c8ae52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/fd5d8930402fa2e6dd7f12c2b5ae79fc13d13fab",
-                "reference": "fd5d8930402fa2e6dd7f12c2b5ae79fc13d13fab",
+                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/11bd5a7d11016e3e9697636915a214ea33c8ae52",
+                "reference": "11bd5a7d11016e3e9697636915a214ea33c8ae52",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "4.7.7"
@@ -97,7 +101,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2016-03-19 18:12:42"
+            "time": "2016-04-09 13:39:12"
         },
         {
             "name": "robmorgan/phinx",

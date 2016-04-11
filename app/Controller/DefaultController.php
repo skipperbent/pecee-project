@@ -4,9 +4,8 @@ namespace Demo\Controller;
 use Demo\Widget\Companies;
 use Demo\Widget\Contact;
 use Demo\Widget\Home;
-use Pecee\Controller\Controller;
 
-class DefaultController extends Controller {
+class DefaultController {
 
 	public function index() {
 		echo new Home();

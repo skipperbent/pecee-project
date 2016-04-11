@@ -2,7 +2,7 @@
 
 namespace Demo\Model;
 
-use Pecee\Date;
+use Carbon\Carbon;
 use Pecee\Model\Model;
 
 class ModelCompany extends Model {
@@ -22,15 +22,7 @@ class ModelCompany extends Model {
 	public function __construct() {
 		parent::__construct();
 
-        $this->created = Date::toDateTime();
-	}
-
-	public static function getById($id) {
-		return self::fetchOne('SELECT * FROM {table} WHERE `id` = %s', $id);
-	}
-
-	public static function get($rows = 20, $page = 0) {
-		return self::fetchPage('SELECT * FROM {table}', $rows, $page);
+        $this->created = Carbon::now()->toDateTimeString();
 	}
 
 }

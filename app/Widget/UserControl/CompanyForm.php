@@ -16,8 +16,14 @@ class CompanyForm extends SiteAbstract {
         $this->setTemplate(null);
 
         if($companyId !== null) {
-            $this->company = ModelCompany::getById($companyId);
-            $this->prependSiteTitle(lang('Companies.EditCompany', $this->company->name));
+
+            $companyModel = new ModelCompany();
+
+            $this->company = $companyModel->find($companyId);
+
+            if($this->company !== null) {
+                $this->prependSiteTitle(lang('Companies.EditCompany', $this->company->name));
+            }
         } else {
             $this->prependSiteTitle(lang('Companies.AddCompany'));
         }
@@ -32,7 +38,7 @@ class CompanyForm extends SiteAbstract {
                 if ($this->company && $this->company->hasRow()) {
                     $this->company->name = $this->input('name');
                     $this->company->ip = request()->getIp();
-                    $this->company->update();
+                    $this->company->save();
 
                     $this->setMessage(lang('Companies.CompanyUpdated'), 'success');
 
@@ -43,7 +49,7 @@ class CompanyForm extends SiteAbstract {
 
                 $company = new ModelCompany();
                 $company->name = $this->input('name');
-                $this->company->ip = request()->getIp();
+                $company->ip = request()->getIp();
                 $company->save();
 
                 $this->setMessage(lang('Companies.CompanySaved'), 'success');

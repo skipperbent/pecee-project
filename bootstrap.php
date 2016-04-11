@@ -1,8 +1,16 @@
 <?php
 $abspath = __DIR__ . DIRECTORY_SEPARATOR;
 set_include_path($abspath . PATH_SEPARATOR . $abspath . 'app' . DIRECTORY_SEPARATOR);
+
 require_once  'vendor/pecee/framework/boot.php';
-require_once 'config/config.php';
+
+$app = array();
+
+require_once 'config/app.php';
+
+if(isset($app['db'])) {
+    new \Pixie\Connection($app['db']['driver'], $app['db']);
+}
 
 $modules = \Pecee\Module::getInstance();
 

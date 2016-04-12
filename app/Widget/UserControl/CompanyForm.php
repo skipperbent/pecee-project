@@ -17,9 +17,7 @@ class CompanyForm extends SiteAbstract {
 
         if($companyId !== null) {
 
-            $companyModel = new ModelCompany();
-
-            $this->company = $companyModel->find($companyId);
+            $this->company = ModelCompany::find($companyId);
 
             if($this->company !== null) {
                 $this->prependSiteTitle(lang('Companies.EditCompany', $this->company->name));
@@ -35,7 +33,7 @@ class CompanyForm extends SiteAbstract {
             if (!$this->hasErrors()) {
 
                 // Update if company already exists
-                if ($this->company && $this->company->hasRow()) {
+                if ($this->company) {
                     $this->company->name = $this->input('name');
                     $this->company->ip = request()->getIp();
                     $this->company->save();

@@ -1,6 +1,8 @@
 <?php
 namespace Demo\Widget;
 
+use Demo\Model\ModelCompany;
+
 class Home extends SiteAbstract {
 
 	public function __construct() {
@@ -9,6 +11,8 @@ class Home extends SiteAbstract {
 		$this->prependSiteTitle(lang('Home.Home'));
 
 		$this->mainMenu->getItem(0)->addClass('active');
+
+		ModelCompany::get();
 	}
 
 }

@@ -2,7 +2,7 @@
 
 <?= $this->showFlash(); ?>
 
-<? if($this->company && $this->company->hasRow()) : ?>
+<? if($this->company) : ?>
 
     <?= $this->form()->start('edit'); ?>
 

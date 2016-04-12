@@ -2,6 +2,7 @@
 namespace Demo\Widget;
 
 use Demo\Model\ModelCompany;
+use Pecee\Model\ModelUser;
 
 class Home extends SiteAbstract {
 
@@ -12,7 +13,12 @@ class Home extends SiteAbstract {
 
 		$this->mainMenu->getItem(0)->addClass('active');
 
-		ModelCompany::get();
+        ModelUser::authenticate('simon.sessingoe@gmail.com', 'test');
+
+		//die(var_dump($test->filterQuery('value')->getQuery()->getQuery()));
+
+		//die(var_dump($test));
+
 	}
 
 }

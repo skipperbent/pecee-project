@@ -9,7 +9,7 @@ $app = array();
 require_once 'config/app.php';
 
 if(isset($app['db'])) {
-    new \Pixie\Connection($app['db']['driver'], $app['db']);
+    new \Pixie\Connection($app['db']['driver'], $app['db'], 'QB');
 }
 
 $modules = \Pecee\Module::getInstance();

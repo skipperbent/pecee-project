@@ -2,7 +2,7 @@
 
 namespace Demo\Model;
 
-use Pecee\Date;
+use Carbon\Carbon;
 use Pecee\Model\Model;
 
 class ModelCompany extends Model {
@@ -16,21 +16,29 @@ class ModelCompany extends Model {
         'created'
     ];
 
-    // Hidden on getArray - useful for json output
+    // Hidden on toArray - useful for json output
 	protected $hidden = ['ip'];
+
+    // Add method to toArray
+    protected $with = ['current_date'];
 
 	public function __construct() {
 		parent::__construct();
 
-        $this->created = Date::toDateTime();
+        $this->created = Carbon::now()->toDateTimeString();
 	}
 
-	public static function getById($id) {
-		return self::fetchOne('SELECT * FROM {table} WHERE `id` = %s', $id);
-	}
+    public function currentDate() {
+        return Carbon::now();
+    }
 
-	public static function get($rows = 20, $page = 0) {
-		return self::fetchPage('SELECT * FROM {table}', $rows, $page);
-	}
+    /**
+     * Filter by name
+     * @param string $name
+     * @return static
+     */
+    public static function filterName($name) {
+        return self::where('name', '=', $name);
+    }
 
 }

@@ -7,8 +7,7 @@ class CreateCompanyTable extends Migration {
 
     public function up() {
 
-        $this->schema->create('node', function(Table $table){
-            $table = new DBTable();
+        $this->schema->create('company', function(Table $table){
             $table->column('id')->integer()->primary()->increment();
             $table->column('name')->string(255);
             $table->column('ip')->string(255);
@@ -18,7 +17,7 @@ class CreateCompanyTable extends Migration {
     }
 
     public function down() {
-        $this->schema->drop('node');
+        $this->schema->drop('company');
     }
 
 }

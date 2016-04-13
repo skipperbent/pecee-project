@@ -9,12 +9,10 @@
 	"type": "project",
 	"require": {
 		"nesbot/carbon": "1.*",
-		"usmanhalalit/pixie": "2.*@dev",
 		"pecee/framework": "3.*"
 	},
 	"require-dev": {
 		"nesbot/carbon": "1.*",
-		"usmanhalalit/pixie": "2.*@dev",
 		"pecee/framework": "3.*"
 	},
 	"config": {

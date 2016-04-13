@@ -56,27 +56,31 @@
         },
         {
             "name": "pecee/framework",
-            "version": "3.1.5.3",
+            "version": "3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/pecee.git",
-                "reference": "e703b58c1848a8724ac23954913566fa64759b3a"
+                "reference": "145927a314a9b3ef38f977e59f9aa3bae27197bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/e703b58c1848a8724ac23954913566fa64759b3a",
-                "reference": "e703b58c1848a8724ac23954913566fa64759b3a",
+                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/145927a314a9b3ef38f977e59f9aa3bae27197bc",
+                "reference": "145927a314a9b3ef38f977e59f9aa3bae27197bc",
                 "shasum": ""
             },
             "require": {
+                "nesbot/carbon": "1.*",
                 "pecee/simple-router": "1.*",
                 "php": ">=5.4.0",
                 "robmorgan/phinx": "^0.5.3",
+                "usmanhalalit/pixie": "2.*@dev",
                 "vlucas/phpdotenv": "2.0"
             },
             "require-dev": {
+                "nesbot/carbon": "1.*",
                 "pecee/simple-router": "1.*",
                 "robmorgan/phinx": "^0.5.3",
+                "usmanhalalit/pixie": "2.*@dev",
                 "vlucas/phpdotenv": "2.0"
             },
             "type": "library",
@@ -103,7 +107,7 @@
                 "pecee",
                 "speed"
             ],
-            "time": "2016-04-10 13:57:00"
+            "time": "2016-04-13 13:24:17"
         },
         {
             "name": "pecee/simple-router",
@@ -544,6 +548,109 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2016-03-04 07:55:57"
+        },
+        {
+            "name": "usmanhalalit/pixie",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/usmanhalalit/pixie.git",
+                "reference": "5820ef4f62c7be697767fd84830b7ad6fc057375"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/usmanhalalit/pixie/zipball/5820ef4f62c7be697767fd84830b7ad6fc057375",
+                "reference": "5820ef4f62c7be697767fd84830b7ad6fc057375",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "usmanhalalit/viocon": "1.0.*@dev"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.4",
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Pixie": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Muhammad Usman",
+                    "email": "hi@usman.it",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Pavel Puchkin",
+                    "email": "i@neoascetic.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A lightweight, expressive, framework agnostic query builder for PHP.",
+            "homepage": "https://github.com/usmanhalalit/pixie",
+            "keywords": [
+                "database",
+                "mysql",
+                "postgresql",
+                "query builder",
+                "sql",
+                "sqlite"
+            ],
+            "time": "2016-04-08 10:58:01"
+        },
+        {
+            "name": "usmanhalalit/viocon",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/usmanhalalit/viocon.git",
+                "reference": "0878afee16f15355971fb95bf3c6d297aceff35d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/usmanhalalit/viocon/zipball/0878afee16f15355971fb95bf3c6d297aceff35d",
+                "reference": "0878afee16f15355971fb95bf3c6d297aceff35d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Viocon": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Muhammad Usman",
+                    "email": "hi@usman.it",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple and flexible Dependency Injection container for PHP.",
+            "homepage": "https://github.com/usmanhalalit/viocon",
+            "keywords": [
+                "container",
+                "di",
+                "ioc",
+                "test"
+            ],
+            "time": "2013-07-13 19:54:56"
         },
         {
             "name": "vlucas/phpdotenv",

@@ -34,34 +34,19 @@ abstract class SiteAbstract extends Widget {
         return Locale::getInstance()->getLocale();
     }
 
-	public function showFlash($form = null) {
-		$o=$this->showMessages($this->errorType, $form);
-		$o.=$this->showMessages('warning', $form);
-		$o.=$this->showMessages('info', $form);
-		$o.=$this->showMessages('success', $form);
+	public function showFlash($form = null, $placement = null) {
+		$o=$this->showMessages($this->errorType, $form, $placement);
+		$o.=$this->showMessages('warning', $form, $placement);
+		$o.=$this->showMessages('info', $form, $placement);
+		$o.=$this->showMessages('success', $form, $placement);
 		return $o;
-	}
-
-	public function showMessages($type, $form = null) {
-		if($this->hasMessages($type, $form)) {
-			$o = sprintf('<div class="alert alert-%s">', $type);
-			$msg=array();
-			/* @var $error \Pecee\UI\Form\FormMessage */
-			foreach($this->getMessages($type) as $error) {
-				$msg[] = sprintf('%s', $error->getMessage());
-			}
-
-			$o .= join('<br/>', $msg) . '</div>';
-			return $o;
-		}
-		return '';
 	}
 
 	public function validationFor($name) {
 		if(parent::validationFor($name)) {
 			$span = new Html('span');
 			$span->addClass('msg error');
-			$span->setInnerHtml(parent::validationFor($name));
+			$span->addInnerHtml(parent::validationFor($name));
 			return $span;
 		}
 		return '';

@@ -3,11 +3,5 @@
 
 global $argv, $appPath;
 
-if(!isset($argv[1])) {
-    echo 'Error: first argument must be app';
-    exit(1);
-}
-
-$appPath = __DIR__ . '/app/' . $argv[1];
-
+$appPath = __DIR__;
 require_once 'vendor/pecee/framework/bin/pecee.php';

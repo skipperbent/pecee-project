@@ -12,7 +12,7 @@ This is a sample-project that is created using PHP using the Pecee-framework.
 
 - Namespace should be the same as app folder name and can be changed directly from config.php (app/[NAME-OF-PROJECT]/config/config.php)
 
-- Point the webserver to the www folder of the app you would like to be accesible from the web (example app/Demo/www/).
+- Point the server to the www folder of the app you would like to be accessible from the web (example app/Demo/www/).
 
 Open source MVC PHP framework based on Microsoft MVVM.
 
@@ -22,7 +22,7 @@ Features:
 
 - Every template has class, called a Widget, behind it. From here you can set properties, create methods and you can even render widgets inside a widget - this makes it super easy the create small pieces of functionality, that can be reused wherever you like.
 
-- Because every template is basiclly a class, you can extend functionality from other widgets and reuse the same functionality or overwrite the things you want to change.
+- Because every template is basically a class, you can extend functionality from other widgets and reuse the same functionality or overwrite the things you want to change.
 
 - Don't like something? Everything is 100% object oriented, so every little piece of code can be easily extended. A great example is PeceeCamp which uses some of the functionality of PeceeCamp, but completely rewrites the way routing is working.
 
@@ -42,13 +42,11 @@ Point your webserver to ```/path/to/project/app/www```.
 
 ## Migrations
 
-If you use migrations remember to change the project path in ```config/phinx-config.php```.
-
-Create new migration by running ```php pecee Demo migrations create CreateDemoTable```
+Create new migration by running ```php pecee migrations create CreateDemoTable```
 
 ## The MIT License (MIT)
 
-Copyright (c) 2015 Simon Sessingø / Pecee
+Copyright (c) 2016 Simon Sessingø / Pecee
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

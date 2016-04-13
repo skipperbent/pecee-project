@@ -8,8 +8,8 @@ require 'bootstrap.php';
 
 return [
     'paths' => [
-        'migrations' => 'app/Demo/database/migrations',
-        'seeds' => 'app/Demo/database/seeds',
+        'migrations' => 'database/migrations',
+        'seeds' => 'database/seeds',
     ],
     'migration_base_class' => '\Pecee\DB\Migration',
     'environments' => [

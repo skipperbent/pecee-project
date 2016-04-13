@@ -9,6 +9,7 @@ class Home extends SiteAbstract {
 		$this->prependSiteTitle(lang('Home.Home'));
 
 		$this->mainMenu->getItem(0)->addClass('active');
+
 	}
 
 }

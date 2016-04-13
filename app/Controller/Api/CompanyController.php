@@ -9,9 +9,11 @@ class CompanyController extends ControllerBase {
 
     public function index() {
 
-        $companies = ModelCompany::get($this->input('rows', 20), $this->input('page', 0));
+        $companyModel = new ModelCompany();
 
-        response()->json($companies->getArray());
+        $companies = $companyModel->get();
+
+        response()->json($companies->toArray());
 
     }
 
@@ -25,16 +27,38 @@ class CompanyController extends ControllerBase {
 
         $company = new ModelCompany();
         $company->name = $this->input('name');
+        $company->ip = request()->getIp();
         $company->save();
+
+        $this->show($company->id);
 
     }
 
+    public function update($id) {
+
+        $companyModel = new ModelCompany();
+
+        $company = $companyModel->findOrfail($id);
+
+        $company->name = $this->input('name');
+        $company->save();
+
+        $this->show($company->id);
+    }
+
+    public function destroy($id) {
+        $companyModel = new ModelCompany();
+
+        $company = $companyModel->findOrfail($id);
+        $company->delete();
+
+        response()->json(['success' => true]);
+    }
+
     public function show($id) {
-
-        $company = ModelCompany::getById($id);
-
-        response()->json($company->getArray());
-
+        $companyModel = new ModelCompany();
+        $company = $companyModel->findOrfail($id);
+        response()->json($company->toArray());
     }
 
 }

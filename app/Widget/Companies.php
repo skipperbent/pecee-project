@@ -12,7 +12,8 @@ class Companies extends SiteAbstract {
 		parent::__construct();
 
 		$this->companyId = $companyId;
-		$this->companies = ModelCompany::get();
+
+		$this->companies = ModelCompany::all();
 
 		$this->prependSiteTitle(lang('Companies.Companies'));
 

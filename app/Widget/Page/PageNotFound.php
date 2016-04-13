@@ -1,6 +1,7 @@
 <?php
 namespace Demo\Widget\Page;
 
+use Demo\Widget\SiteAbstract;
 use Demo\Widget\WidgetAbstract;
 
 class PageNotFound extends SiteAbstract {

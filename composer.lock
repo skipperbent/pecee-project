@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "209024e3ce57bc029cc576f9ad15dce5",
-    "content-hash": "e622cfb7d89d753f1add1e1a5a024e72",
+    "hash": "2e6e0951e7c0fa01600c10108f020533",
+    "content-hash": "ce6c04298aadaf8fb6b44ee9ca3689cb",
     "packages": [
         {
             "name": "nesbot/carbon",
@@ -56,16 +56,16 @@
         },
         {
             "name": "pecee/framework",
-            "version": "3.2.1",
+            "version": "3.2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/pecee.git",
-                "reference": "00d5d87650106e4eb31c54c3c62d6882ab5c9d0f"
+                "reference": "d7e90815cc4608fe6bd7e9b519cea3ce26053beb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/00d5d87650106e4eb31c54c3c62d6882ab5c9d0f",
-                "reference": "00d5d87650106e4eb31c54c3c62d6882ab5c9d0f",
+                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/d7e90815cc4608fe6bd7e9b519cea3ce26053beb",
+                "reference": "d7e90815cc4608fe6bd7e9b519cea3ce26053beb",
                 "shasum": ""
             },
             "require": {
@@ -107,7 +107,7 @@
                 "pecee",
                 "speed"
             ],
-            "time": "2016-04-13 18:19:46"
+            "time": "2016-04-13 20:26:50"
         },
         {
             "name": "pecee/simple-router",

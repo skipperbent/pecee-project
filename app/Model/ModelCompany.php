@@ -37,8 +37,8 @@ class ModelCompany extends Model {
      * @param string $name
      * @return static
      */
-    public static function filterName($name) {
-        return self::where('name', '=', $name);
+    public function filterName($name) {
+        return $this->where('name', '=', $name);
     }
 
 }

@@ -19,14 +19,16 @@ class CompanyController extends ControllerBase {
 
     public function store() {
 
-        $this->post->name->addValidation([ new ValidateInputNotNullOrEmpty() ]);
+        $this->validate([
+            'name' => [ new ValidateInputNotNullOrEmpty() ]
+        ]);
 
         if($this->hasErrors()) {
             throw new \InvalidArgumentException( join(', ', $this->getErrorsArray()) );
         }
 
         $company = new ModelCompany();
-        $company->name = $this->input('name');
+        $company->name = input()->get('name');
         $company->ip = request()->getIp();
         $company->save();
 
@@ -40,7 +42,7 @@ class CompanyController extends ControllerBase {
 
         $company = $companyModel->findOrfail($id);
 
-        $company->name = $this->input('name');
+        $company->name = input()->get('name');
         $company->save();
 
         $this->show($company->id);

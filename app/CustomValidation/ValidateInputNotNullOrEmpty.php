@@ -1,16 +1,16 @@
 <?php
 namespace Demo\CustomValidation;
 
-use Pecee\Http\Input\Validation\ValidateInput;
+use Pecee\Http\InputValidation\ValidateInput;
 
 class ValidateInputNotNullOrEmpty extends ValidateInput {
 
-    public function validate() {
+    public function validates() {
         return (!empty($this->value));
     }
 
-    public function getErrorMessage() {
-        return lang('Validation.Required', $this->name);
+    public function getError() {
+        return lang('Validation.Required', $this->input->getName());
     }
 
 }

@@ -34,11 +34,11 @@ abstract class SiteAbstract extends Widget {
         return Locale::getInstance()->getLocale();
     }
 
-	public function showFlash($form = null, $placement = null) {
-		$o=$this->showMessages($this->errorType, $form, $placement);
-		$o.=$this->showMessages('warning', $form, $placement);
-		$o.=$this->showMessages('info', $form, $placement);
-		$o.=$this->showMessages('success', $form, $placement);
+	public function showFlash($placement = null) {
+		$o = $this->showMessages($this->errorType, $placement);
+		$o .= $this->showMessages('warning', $placement);
+		$o .= $this->showMessages('info', $placement);
+		$o .= $this->showMessages('success', $placement);
 		return $o;
 	}
 

@@ -28,13 +28,15 @@ class CompanyForm extends SiteAbstract {
 
         if($this->isPostBack()) {
 
-            $this->post->name->addValidation(new ValidateInputNotNullOrEmpty());
+            $this->validate([
+                'name' => [ new ValidateInputNotNullOrEmpty() ]
+            ]);
 
             if (!$this->hasErrors()) {
 
                 // Update if company already exists
                 if ($this->company) {
-                    $this->company->name = $this->input('name');
+                    $this->company->name = input()->get('name');
                     $this->company->ip = request()->getIp();
                     $this->company->save();
 
@@ -46,7 +48,7 @@ class CompanyForm extends SiteAbstract {
                 // Otherwise create...
 
                 $company = new ModelCompany();
-                $company->name = $this->input('name');
+                $company->name = input()->get('name');
                 $company->ip = request()->getIp();
                 $company->save();
 

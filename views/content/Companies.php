@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            <? foreach($this->companies->getRows() as $company) : ?>
+            <? foreach($this->companies as $company) : ?>
             <tr>
                 <td><?= $company->name; ?></td>
                 <td>

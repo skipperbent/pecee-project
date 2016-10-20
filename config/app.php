@@ -21,8 +21,8 @@ if(env('DB_DRIVER') !== null) {
         'database' => env('DB_DATABASE'),
         'username' => env('DB_USERNAME'),
         'password' => env('DB_PASSWORD'),
-        'charset' => 'utf8', // Optional
-        'collation' => 'utf8_unicode_ci', // Optional
+        'charset' => 'utf8mb4', // Optional
+        'collation' => 'utf8mb4_unicode_ci', // Optional
         'prefix' => '', // Table prefix, optional
     );
 

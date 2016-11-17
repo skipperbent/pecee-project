@@ -1,15 +1,15 @@
 <?php
 namespace Demo\Controller\Api;
 
-use Demo\CustomValidation\ValidateInputNotNullOrEmpty;
-use Demo\Model\ModelCompany;
+use Demo\Model\Company;
+use Demo\UI\Validation\NotNullOrEmpty;
 use Pecee\Controller\ControllerBase;
 
 class CompanyController extends ControllerBase {
 
     public function index() {
 
-        $companyModel = new ModelCompany();
+        $companyModel = new Company();
 
         $companies = $companyModel->get();
 
@@ -20,14 +20,14 @@ class CompanyController extends ControllerBase {
     public function store() {
 
         $this->validate([
-            'name' => [ new ValidateInputNotNullOrEmpty() ]
+            'name' => new NotNullOrEmpty()
         ]);
 
         if($this->hasErrors()) {
             throw new \InvalidArgumentException( join(', ', $this->getErrorsArray()) );
         }
 
-        $company = new ModelCompany();
+        $company = new Company();
         $company->name = input()->get('name');
         $company->ip = request()->getIp();
         $company->save();
@@ -38,7 +38,7 @@ class CompanyController extends ControllerBase {
 
     public function update($id) {
 
-        $companyModel = new ModelCompany();
+        $companyModel = new Company();
 
         $company = $companyModel->findOrfail($id);
 
@@ -49,7 +49,7 @@ class CompanyController extends ControllerBase {
     }
 
     public function destroy($id) {
-        $companyModel = new ModelCompany();
+        $companyModel = new Company();
 
         $company = $companyModel->findOrfail($id);
         $company->delete();
@@ -58,7 +58,7 @@ class CompanyController extends ControllerBase {
     }
 
     public function show($id) {
-        $companyModel = new ModelCompany();
+        $companyModel = new Company();
         $company = $companyModel->findOrfail($id);
         response()->json($company->toArray());
     }

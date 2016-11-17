@@ -6,9 +6,11 @@
 // $key = \Pecee\Registry::getInstance();
 // $key->set('StuffToSave', 'ValueToRetrieve');
 
-// Set the framework to use XML for language
-use \Pecee\Translation;
-Translation::getInstance()->setType(Translation::TYPE_XML);
+request()->locale->setTimezone('UTC');
+request()->translation->setProvider(new \Pecee\Translation\Providers\XmlTranslateProvider());
+request()->site->setAdminIps([
+    '127.0.0.1',
+]);
 
 
 // ---- DATABASE SETTINGS ----

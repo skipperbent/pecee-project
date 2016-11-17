@@ -2,5 +2,6 @@
 
 <h1><?= lang('PageNotFound.PageNotFound'); ?></h1>
 <p class="lead">
-    Lorem ipsum.
+    Lorem ipsum.<br>
+    <?= url(); ?>
 </p>

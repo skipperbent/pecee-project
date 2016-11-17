@@ -1,6 +1,6 @@
 {
- 	"name": "pecee/pecee",
- 	"description": "Pecee Framework.",
+ 	"name": "pecee/demo",
+ 	"description": "Pecee demo project.",
  	"keywords": [
 		"framework",
 		"pecee"
@@ -8,12 +8,10 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"nesbot/carbon": "1.*",
 		"pecee/framework": "3.*"
 	},
 	"require-dev": {
-		"nesbot/carbon": "1.*",
-		"pecee/framework": "3.*"
+
 	},
 	"config": {
 		"preferred-install": "dist"

@@ -2,26 +2,28 @@
 
 namespace Demo\Widget\UserControl;
 
-use Demo\CustomValidation\ValidateInputNotNullOrEmpty;
-use Demo\Model\ModelCompany;
+use Demo\Model\Company;
+use Demo\UI\Validation\NotNullOrEmpty;
 use Demo\Widget\SiteAbstract;
 
 class CompanyForm extends SiteAbstract {
 
     protected $company;
+    protected $exists;
 
     public function __construct($companyId = null) {
         parent::__construct();
 
-        $this->setTemplate(null);
-
         if($companyId !== null) {
+            $this->company = Company::instance()->find($companyId);
+        } else {
+            $this->company = new Company();
+        }
 
-            $this->company = ModelCompany::find($companyId);
+        $this->exists = $this->company->exists();
 
-            if($this->company !== null) {
-                $this->prependSiteTitle(lang('Companies.EditCompany', $this->company->name));
-            }
+        if($this->exists) {
+            $this->prependSiteTitle(lang('Companies.EditCompany', $this->company->name));
         } else {
             $this->prependSiteTitle(lang('Companies.AddCompany'));
         }
@@ -29,30 +31,21 @@ class CompanyForm extends SiteAbstract {
         if($this->isPostBack()) {
 
             $this->validate([
-                'name' => [ new ValidateInputNotNullOrEmpty() ]
+                'name' => [ new NotNullOrEmpty() ]
             ]);
 
             if (!$this->hasErrors()) {
 
-                // Update if company already exists
-                if ($this->company) {
-                    $this->company->name = input()->get('name');
-                    $this->company->ip = request()->getIp();
-                    $this->company->save();
+                $this->company->save([
+                    'name' => input()->get('name'),
+                    'ip' => request()->getIp(),
+                ]);
 
+                if($this->exists) {
                     $this->setMessage(lang('Companies.CompanyUpdated'), 'success');
-
-                    response()->refresh();
+                } else {
+                    $this->setMessage(lang('Companies.CompanySaved'), 'success');
                 }
-
-                // Otherwise create...
-
-                $company = new ModelCompany();
-                $company->name = input()->get('name');
-                $company->ip = request()->getIp();
-                $company->save();
-
-                $this->setMessage(lang('Companies.CompanySaved'), 'success');
 
                 // Refresh
                 response()->refresh();

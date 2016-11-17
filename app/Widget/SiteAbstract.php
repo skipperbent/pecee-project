@@ -1,7 +1,6 @@
 <?php
 namespace Demo\Widget;
 
-use Pecee\Locale;
 use Pecee\UI\Html\Html;
 use Pecee\UI\Menu\Menu;
 use Pecee\Widget\Widget;
@@ -31,7 +30,7 @@ abstract class SiteAbstract extends Widget {
 	}
 
     public function getLanguage() {
-        return Locale::getInstance()->getLocale();
+        return request()->locale->getLocale();
     }
 
 	public function showFlash($placement = null) {

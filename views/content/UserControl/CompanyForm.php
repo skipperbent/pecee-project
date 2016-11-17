@@ -2,7 +2,7 @@
 
 <?= $this->showFlash(); ?>
 
-<? if($this->company) : ?>
+<? if($this->company->exists()) : ?>
 
     <?= $this->form()->start('edit'); ?>
 

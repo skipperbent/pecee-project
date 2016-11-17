@@ -11,7 +11,8 @@ class CreateCompanyTable extends Migration {
             $table->column('id')->integer()->primary()->increment();
             $table->column('name')->string(255);
             $table->column('ip')->string(255);
-            $table->column('created')->datetime()->index();
+            $table->column('updated_at')->datetime()->nullable()->index();
+            $table->column('created_at')->datetime()->index();
         });
 
     }

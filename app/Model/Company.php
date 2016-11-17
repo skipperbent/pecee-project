@@ -5,15 +5,18 @@ namespace Demo\Model;
 use Carbon\Carbon;
 use Pecee\Model\Model;
 
-class ModelCompany extends Model {
+class Company extends Model {
 
+    // Automatically update created_at + updated_at columns
+    protected $timestamps = true;
     protected $table = 'company';
 
     protected $columns = [
         'id',
         'name',
         'ip',
-        'created'
+        'created_at',
+        'updated_at',
     ];
 
     // Hidden on toArray - useful for json output
@@ -22,11 +25,10 @@ class ModelCompany extends Model {
     // Add method to toArray
     protected $with = ['current_date'];
 
-	public function __construct() {
-		parent::__construct();
-
-        $this->created = Carbon::now()->toDateTimeString();
-	}
+    public function __construct() {
+        parent::__construct();
+        $this->ip = request()->ip;
+    }
 
     public function currentDate() {
         return Carbon::now();

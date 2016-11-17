@@ -8,7 +8,7 @@ use Pecee\SimpleRouter\RouterEntry;
 
 class CustomExceptionHandler extends ExceptionHandler {
 
-    public function handleError( Request $request, RouterEntry $router = null, \Exception $error) {
+    public function handleError( Request $request, RouterEntry &$route = null, \Exception $error) {
 
         // Return json errors if we encounter an error on the API.
         if(stripos($request->getUri(), '/api') !== false) {
@@ -16,8 +16,7 @@ class CustomExceptionHandler extends ExceptionHandler {
         }
 
         if($error->getCode() == 404) {
-            echo new PageNotFound();
-            die();
+            $request->setUri(url('page.notfound'));
         }
     }
 

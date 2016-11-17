@@ -1,5 +1,5 @@
 <? /* @var $this \Demo\Widget\SiteAbstract */ ?>
-<?= \Pecee\UI\Site::GetInstance()->getDocType(); ?>
+<?= $this->getSite()->getDocType(); ?>
 <html>
 	<head>
 		<?= $this->printHeader(); ?>
@@ -30,7 +30,7 @@
 
 		<footer>
             <div class="container">
-                <?= $this->form()->selectStart('lang', ['da_dk' => 'Dansk', 'en_uk' => 'English'], $this->getLanguage())->addAttribute('onchange', 'top.location.href=\''. url('home') .'?lang=\' + this[selectedIndex].value;'); ?>
+                <?= $this->form()->selectStart('lang', ['da_dk' => 'Dansk', 'en_gb' => 'English'], $this->getLanguage())->addAttribute('onchange', 'top.location.href=\''. url('home') .'?lang=\' + this[selectedIndex].value;'); ?>
             </div>
         </footer>
 	</body>

@@ -2,18 +2,20 @@
 
 namespace Demo\Model;
 
-use Pecee\Date;
 use Pecee\Model\Model;
 
-class ModelCompany extends Model {
+class Company extends Model {
 
     protected $table = 'company';
+
+    protected $timestamps = true;
 
     protected $columns = [
         'id',
         'name',
         'ip',
-        'created'
+        'updated_at',
+        'created_at'
     ];
 
     // Hidden on getArray - useful for json output
@@ -22,7 +24,7 @@ class ModelCompany extends Model {
 	public function __construct() {
 		parent::__construct();
 
-        $this->created = Date::toDateTime();
+        $this->ip = request()->getIp();
 	}
 
 	public static function getById($id) {

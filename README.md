@@ -42,7 +42,14 @@ Point your webserver to ```/path/to/project/app/www```.
 
 ## Migrations
 
-Create new migration by running ```php pecee migrations create CreateDemoTable```
+Create new migration by running 
+
+```php 
+./pecee migrations create CreateDemoTable
+./pecee migrations migrate
+```
+
+
 
 ## The MIT License (MIT)
 

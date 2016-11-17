@@ -4,7 +4,7 @@ namespace Demo\Middleware;
 use Pecee\Cookie;
 use Pecee\Http\Middleware\BaseMiddleware;
 use Pecee\Http\Request;
-use Pecee\Locale;
+use Pecee\SimpleRouter\RouterEntry;
 
 class LanguageDetection extends BaseMiddleware {
 
@@ -13,7 +13,7 @@ class LanguageDetection extends BaseMiddleware {
         'en_gb'
     ];
 
-    public function handle(Request $request){
+    public function handle(Request $request, RouterEntry &$route){
 
         $locale = 'en_gb';
 
@@ -21,15 +21,14 @@ class LanguageDetection extends BaseMiddleware {
             $locale = Cookie::get('lang');
         }
 
-        if($this->input('lang') && in_array(strtolower($this->input('lang')), $this->supportedLanguages)) {
+        if(input()->get('lang') && in_array(strtolower(input()->get('lang')), $this->supportedLanguages)) {
             /* Site main language */
-            $locale = $this->input('lang');
+            $locale = input()->get('lang');
 
-            Cookie::create('lang', $this->input('lang'));
+            Cookie::create('lang', input()->get('lang'));
         }
 
-        Locale::getInstance()->setLocale($locale);
-        Locale::getInstance()->setDefaultLocale($locale);
+        request()->locale->setLocale($locale);
 
     }
 }

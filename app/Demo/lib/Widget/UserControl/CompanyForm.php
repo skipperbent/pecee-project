@@ -2,8 +2,8 @@
 
 namespace Demo\Widget\UserControl;
 
-use Demo\CustomValidation\ValidateInputNotNullOrEmpty;
-use Demo\Model\ModelCompany;
+use Demo\Model\Company;
+use Demo\UI\Validation\NotNullOrEmpty;
 use Demo\Widget\SiteAbstract;
 
 class CompanyForm extends SiteAbstract {
@@ -16,7 +16,7 @@ class CompanyForm extends SiteAbstract {
         $this->setTemplate(null);
 
         if($companyId !== null) {
-            $this->company = ModelCompany::getById($companyId);
+            $this->company = Company::getById($companyId);
             $this->prependSiteTitle(lang('Companies.EditCompany', $this->company->name));
         } else {
             $this->prependSiteTitle(lang('Companies.AddCompany'));
@@ -24,13 +24,15 @@ class CompanyForm extends SiteAbstract {
 
         if($this->isPostBack()) {
 
-            $this->post->name->addValidation(new ValidateInputNotNullOrEmpty());
+            $this->validate([
+                'name' => new NotNullOrEmpty()
+            ]);
 
             if (!$this->hasErrors()) {
 
                 // Update if company already exists
                 if ($this->company && $this->company->hasRow()) {
-                    $this->company->name = $this->input('name');
+                    $this->company->name = input()->get('name');
                     $this->company->ip = request()->getIp();
                     $this->company->update();
 
@@ -41,8 +43,8 @@ class CompanyForm extends SiteAbstract {
 
                 // Otherwise create...
 
-                $company = new ModelCompany();
-                $company->name = $this->input('name');
+                $company = new Company();
+                $company->name = input()->get('name');
                 $this->company->ip = request()->getIp();
                 $company->save();
 

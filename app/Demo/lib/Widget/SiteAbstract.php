@@ -31,7 +31,7 @@ abstract class SiteAbstract extends Widget {
 	}
 
     public function getLanguage() {
-        return Locale::getInstance()->getLocale();
+        return request()->locale->getLocale();
     }
 
 	public function showFlash($form = null) {

@@ -1,7 +1,7 @@
 <?php
 namespace Demo\Widget;
 
-use Demo\Model\ModelCompany;
+use Demo\Model\Company;
 
 class Companies extends SiteAbstract {
 
@@ -12,7 +12,7 @@ class Companies extends SiteAbstract {
 		parent::__construct();
 
 		$this->companyId = $companyId;
-		$this->companies = ModelCompany::get();
+		$this->companies = Company::get();
 
 		$this->prependSiteTitle(lang('Companies.Companies'));
 

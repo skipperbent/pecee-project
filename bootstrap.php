@@ -4,20 +4,12 @@ set_include_path($abspath . PATH_SEPARATOR . $abspath . 'app' . DIRECTORY_SEPARA
 
 require_once  'vendor/pecee/framework/boot.php';
 
-$app = array();
-
-require_once 'config/app.php';
-
-if(isset($app['db'])) {
-    new \Pixie\Connection($app['db']['driver'], $app['db'], 'QB');
-}
-
 function modules_autoloader($class) {
     $file = explode('\\', $class);
     $app = array_shift($file);
     $file = join(DIRECTORY_SEPARATOR, $file) . '.php';
 
-    if(request()->modules !== null && request()->modules instanceof \Pecee\Module) {
+    if(request()->modules !== null && request()->modules instanceof \Pecee\Modules) {
         $module = request()->modules->get($app);
 
         if ($module !== null) {
@@ -26,10 +18,12 @@ function modules_autoloader($class) {
     }
 }
 
-if(request()->modules !== null && request()->modules instanceof \Pecee\Module && count(request()->modules->getList())) {
-    foreach(request()->modules as $module) {
-        set_include_path(get_include_path() . PATH_SEPARATOR . $module . '/app/' . PATH_SEPARATOR . $module . '/');
-    }
-}
-
 spl_autoload_register('modules_autoloader');
+
+$app = array();
+
+require_once 'config/app.php';
+
+if(isset($app['db'])) {
+    new \Pixie\Connection($app['db']['driver'], $app['db'], 'QB');
+}

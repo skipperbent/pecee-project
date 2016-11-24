@@ -1,9 +1,13 @@
 <? /* @var $this \Demo\Widget\SiteAbstract */ ?>
-<?= $this->getSite()->getDocType(); ?>
-<html>
-	<head>
-		<?= $this->printHeader(); ?>
-	</head>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><?= $this->getSite()->getTitle(); ?></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <?= $this->printMeta(); ?>
+        <?= $this->printCss(); ?>
+        <?= $this->printJs(); ?>
+    </head>
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">

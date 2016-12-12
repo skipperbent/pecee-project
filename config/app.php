@@ -6,9 +6,9 @@
 // $key = \Pecee\Registry::getInstance();
 // $key->set('StuffToSave', 'ValueToRetrieve');
 
-request()->locale->setTimezone('UTC');
-request()->translation->setProvider(new \Pecee\Translation\Providers\XmlTranslateProvider());
-request()->site->setAdminIps([
+app()->translation->setProvider(new \Pecee\Translation\Providers\XmlTranslateProvider());
+app()->setTimezone('UTC');
+app()->setAdminIps([
     '127.0.0.1',
 ]);
 

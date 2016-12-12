@@ -30,7 +30,7 @@ abstract class SiteAbstract extends Widget {
 	}
 
     public function getLanguage() {
-        return request()->locale->getLocale();
+        return app()->getLocale();
     }
 
 	public function showFlash($placement = null) {

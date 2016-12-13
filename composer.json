@@ -1,9 +1,10 @@
 {
- 	"name": "pecee/demo",
- 	"description": "Pecee demo project.",
+ 	"name": "pecee/project",
+ 	"description": "Template for setting up new project using the Pecee framework.",
  	"keywords": [
 		"framework",
-		"pecee"
+		"pecee",
+		"project"
 	],
 	"license": "MIT",
 	"type": "project",

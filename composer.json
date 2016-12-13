@@ -1,6 +1,6 @@
 {
  	"name": "pecee/project",
- 	"description": "Pecee Demo Project",
+ 	"description": "Template for setting up new project using the Pecee framework.",
  	"keywords": [
 		"framework",
 		"pecee",

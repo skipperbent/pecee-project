@@ -1,5 +1,5 @@
 {
- 	"name": "pecee/pecee",
+ 	"name": "pecee/project",
  	"description": "Pecee Framework.",
  	"keywords": [
 		"framework",
@@ -11,9 +11,14 @@
 		"pecee/framework": "1.*"
 	},
 	"require-dev": {
-		"pecee/framework": "1.*"
+	
 	},
 	"config": {
 		"preferred-install": "dist"
+	},
+	"scripts": {
+		"post-root-package-install": [
+			"php -r \"copy('.env.example', '.env');\""
+		]
 	}
 }

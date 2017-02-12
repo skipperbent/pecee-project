@@ -9,10 +9,9 @@ class CreateCompanyTable extends Migration {
 
         $this->schema->create('company', function(Table $table){
             $table->column('id')->integer()->primary()->increment();
-            $table->column('name')->string(255);
+            $table->column('name')->string(255)->index();
             $table->column('ip')->string(255);
-            $table->column('updated_at')->datetime()->nullable()->index();
-            $table->column('created_at')->datetime()->index();
+            $table->timestamps();
         });
 
     }

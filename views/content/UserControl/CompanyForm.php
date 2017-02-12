@@ -1,39 +1,48 @@
 <? /* @var $this \Demo\Widget\UserControl\CompanyForm */ ?>
 
-<?= $this->showFlash(); ?>
-
-<? if($this->company->exists()) : ?>
-
-    <?= $this->form()->start('edit'); ?>
-
-    <h3><?= lang('Companies.EditCompany', $this->company->name); ?></h3>
-
-    <div class="form-group">
-        <label for="email"><?= lang('Companies.Name'); ?>:</label>
-        <?= $this->form()->input('name', 'text', $this->company->name)->addClass('form-control')->id('email'); ?>
+<div class="card mb-4 mt-1">
+    <div class="card-header">
+        <? if($this->company->exists()) : ?>
+            <h5 class="mb-0 pb-0"><?= lang('Companies.EditCompany', $this->company->name); ?></h5>
+        <? else: ?>
+            <h5 class="mb-0 pb-0"><?= lang('Companies.AddCompany'); ?></h5>
+        <? endif; ?>
     </div>
+    <div class="card-block">
 
-    <button type="submit" class="btn btn-default">
-        <?= lang('Companies.Update'); ?>
-    </button>
+        <?= $this->showFlash(); ?>
 
-    <?= $this->form()->end(); ?>
+        <? if($this->company->exists()) : ?>
 
-<? else: ?>
+            <?= $this->form()->start('edit'); ?>
 
-    <?= $this->form()->start('create'); ?>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-2 col-form-label"><?= lang('Companies.Name'); ?></label>
+                    <div class="col-sm-4">
+                        <?= $this->form()->input('name', 'text', $this->company->name)->addClass('form-control')->id('email'); ?>
+                    </div>
+                </div>
 
-        <h3><?= lang('Companies.AddCompany'); ?></h3>
+                <?= $this->form()->button(lang('Companies.Update'), 'submit')->addClass('btn btn-primary'); ?>
 
-        <div class="form-group">
-            <label for="email"><?= lang('Companies.Name'); ?>:</label>
-            <?= $this->form()->input('name', 'text')->addClass('form-control')->id('email'); ?>
-        </div>
+            <?= $this->form()->end(); ?>
 
-        <button type="submit" class="btn btn-default">
-            <?= lang('Companies.Add'); ?>
-        </button>
+        <? else: ?>
 
-    <?= $this->form()->end(); ?>
+            <?= $this->form()->start('create'); ?>
 
-<? endif; ?>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-2 col-form-label"><?= lang('Companies.Name'); ?></label>
+                    <div class="col-sm-4">
+                        <?= $this->form()->input('name', 'text')->addClass('form-control')->id('email'); ?>
+                    </div>
+                </div>
+
+                <?= $this->form()->button(lang('Companies.Add'), 'submit')->addClass('btn btn-primary'); ?>
+
+            <?= $this->form()->end(); ?>
+
+        <? endif; ?>
+
+    </div>
+</div>

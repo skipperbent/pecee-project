@@ -9,20 +9,15 @@ use Demo\Widget\SiteAbstract;
 class CompanyForm extends SiteAbstract {
 
     protected $company;
-    protected $exists;
 
     public function __construct($companyId = null) {
         parent::__construct();
 
-        if($companyId !== null) {
-            $this->company = Company::instance()->find($companyId);
-        } else {
-            $this->company = new Company();
-        }
+        $this->company = Company::instance()->where('id', '=', $companyId)->firstOrNew();
 
-        $this->exists = $this->company->exists();
+        $exists = $this->company->exists();
 
-        if($this->exists) {
+        if($exists) {
             $this->prependSiteTitle(lang('Companies.EditCompany', $this->company->name));
         } else {
             $this->prependSiteTitle(lang('Companies.AddCompany'));
@@ -41,7 +36,7 @@ class CompanyForm extends SiteAbstract {
                     'ip' => request()->getIp(),
                 ]);
 
-                if($this->exists) {
+                if($exists) {
                     $this->setMessage(lang('Companies.CompanyUpdated'), 'success');
                 } else {
                     $this->setMessage(lang('Companies.CompanySaved'), 'success');

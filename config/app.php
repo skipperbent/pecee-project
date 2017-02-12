@@ -7,6 +7,8 @@
 // $key->set('StuffToSave', 'ValueToRetrieve');
 
 app()->translation->setProvider(new \Pecee\Translation\Providers\XmlTranslateProvider());
+app()->setDefaultLocale('en_gb');
+app()->setLocale('en_gb');
 app()->setTimezone('UTC');
 app()->setAdminIps([
     '127.0.0.1',

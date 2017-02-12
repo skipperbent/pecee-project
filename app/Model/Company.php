@@ -15,8 +15,6 @@ class Company extends Model {
         'id',
         'name',
         'ip',
-        'created_at',
-        'updated_at',
     ];
 
     // Hidden on toArray - useful for json output

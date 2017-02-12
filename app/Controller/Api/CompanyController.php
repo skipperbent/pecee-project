@@ -9,28 +9,21 @@ class CompanyController extends ControllerBase {
 
     public function index() {
 
-        $companyModel = new Company();
-
-        $companies = $companyModel->get();
-
-        response()->json($companies->toArray());
+        response()->json(Company::all()->toArray());
 
     }
 
     public function store() {
 
         $this->validate([
-            'name' => new NotNullOrEmpty()
+            'name' => new NotNullOrEmpty(),
         ]);
 
-        if($this->hasErrors()) {
-            throw new \InvalidArgumentException( join(', ', $this->getErrorsArray()) );
-        }
-
         $company = new Company();
-        $company->name = input()->get('name');
-        $company->ip = request()->getIp();
-        $company->save();
+        $company->save([
+            'name' => input()->get('name'),
+            'ip' => request()->getIp(),
+        ]);
 
         $this->show($company->id);
 
@@ -38,29 +31,28 @@ class CompanyController extends ControllerBase {
 
     public function update($id) {
 
-        $companyModel = new Company();
-
-        $company = $companyModel->findOrfail($id);
-
-        $company->name = input()->get('name');
-        $company->save();
+        $company = Company::findOrFail($id)->save([
+            'name' => input()->get('name'),
+        ]);
 
         $this->show($company->id);
     }
 
     public function destroy($id) {
-        $companyModel = new Company();
 
-        $company = $companyModel->findOrfail($id);
+        $company = Company::findOrFail($id);
         $company->delete();
 
-        response()->json(['success' => true]);
+        response()->json([
+            'id' => $id,
+            'success' => true,
+        ]);
     }
 
     public function show($id) {
-        $companyModel = new Company();
-        $company = $companyModel->findOrfail($id);
-        response()->json($company->toArray());
+
+        response()->json(Company::findOrFail($id)->toArray());
+
     }
 
 }

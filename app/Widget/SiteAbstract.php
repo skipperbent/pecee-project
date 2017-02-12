@@ -19,14 +19,24 @@ abstract class SiteAbstract extends Widget {
 		$this->getSite()->addWrappedCss('style.css');
 
 		$this->getSite()->addWrappedJs('../bower/jquery/dist/jquery.min.js');
+		$this->getSite()->addWrappedJs('../bower/tether/dist/js/tether.min.js');
 		$this->getSite()->addWrappedJs('../bower/bootstrap/dist/js/bootstrap.min.js');
         $this->getSite()->addWrappedJs('global.js');
 
 		$this->mainMenu = new Menu();
-		$this->mainMenu->addClass('nav navbar-nav');
-		$this->mainMenu->addItem(lang('Home.Home'), url('home'));
-		$this->mainMenu->addItem(lang('Companies.Companies'), url('companies', ['id' => '']));
-		$this->mainMenu->addItem(lang('Contact.Contact'), url('contact'));
+		$this->mainMenu->addClass('navbar-nav mr-auto');
+
+		$this->mainMenu->addItem(lang('Home.Home'), url('home'))
+            ->addClass('nav-item')
+            ->addLinkAttribute('class', 'nav-link');
+
+		$this->mainMenu->addItem(lang('Companies.Companies'), url('companies', ['id' => '']))
+            ->addClass('nav-item')
+            ->addLinkAttribute('class', 'nav-link');
+
+		$this->mainMenu->addItem(lang('Contact.Contact'), url('contact'))
+            ->addClass('nav-item')
+            ->addLinkAttribute('class', 'nav-link');
 	}
 
     public function getLanguage() {

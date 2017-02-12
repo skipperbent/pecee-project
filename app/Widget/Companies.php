@@ -13,7 +13,7 @@ class Companies extends SiteAbstract {
 
 		$this->companyId = $companyId;
 
-		$this->companies = Company::instance()->all();
+		$this->companies = Company::instance()->orderBy('name', 'ASC')->all();
 
 		$this->prependSiteTitle(lang('Companies.Companies'));
 

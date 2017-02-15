@@ -1,15 +1,17 @@
 <?php
 namespace Demo\Widget;
 
-class Home extends SiteAbstract {
+class Home extends Site
+{
 
-	public function __construct() {
-		parent::__construct();
+    public function __construct()
+    {
+        parent::__construct();
 
-		$this->prependSiteTitle(lang('Home.Home'));
+        $this->prependSiteTitle(lang('Home.Home'));
 
-		$this->mainMenu->getItem(0)->addClass('active');
+        $this->mainMenu->findItemByUrl(url('home'))->addClass('active');
 
-	}
+    }
 
 }

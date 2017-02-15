@@ -69,23 +69,24 @@
         },
         {
             "name": "josegonzalez/dotenv",
-            "version": "2.1.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/josegonzalez/php-dotenv.git",
-                "reference": "ff3461f2960737f54054dff4fef3482a2bb9682b"
+                "reference": "a46e973d6f8ddc2ced8ff79981ef78d2983a09b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/josegonzalez/php-dotenv/zipball/ff3461f2960737f54054dff4fef3482a2bb9682b",
-                "reference": "ff3461f2960737f54054dff4fef3482a2bb9682b",
+                "url": "https://api.github.com/repos/josegonzalez/php-dotenv/zipball/a46e973d6f8ddc2ced8ff79981ef78d2983a09b2",
+                "reference": "a46e973d6f8ddc2ced8ff79981ef78d2983a09b2",
                 "shasum": ""
             },
             "require": {
                 "m1/env": "2.*",
-                "php": ">=5.3.0"
+                "php": ">=7.0.0"
             },
             "require-dev": {
+                "php-mock/php-mock-phpunit": "^1.1",
                 "satooshi/php-coveralls": "1.*",
                 "squizlabs/php_codesniffer": "2.*"
             },
@@ -117,7 +118,7 @@
                 "dotenv",
                 "php"
             ],
-            "time": "2017-01-03 01:04:05"
+            "time": "2017-01-03 02:23:08"
         },
         {
             "name": "m1/env",
@@ -232,23 +233,23 @@
         },
         {
             "name": "pecee/framework",
-            "version": "3.7.4.0",
+            "version": "3.7.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/pecee.git",
-                "reference": "e414f6c68629e60410a5b58be52f6fb71b38792b"
+                "reference": "b12c712b06cf4a9d4beb4e4af9fec4ba8742b4c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/e414f6c68629e60410a5b58be52f6fb71b38792b",
-                "reference": "e414f6c68629e60410a5b58be52f6fb71b38792b",
+                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/b12c712b06cf4a9d4beb4e4af9fec4ba8742b4c0",
+                "reference": "b12c712b06cf4a9d4beb4e4af9fec4ba8742b4c0",
                 "shasum": ""
             },
             "require": {
                 "filp/whoops": "^2.1",
-                "josegonzalez/dotenv": "2.*",
+                "josegonzalez/dotenv": "3.*",
                 "nesbot/carbon": "1.*",
-                "pecee/pixie": "2.*",
+                "pecee/pixie": "3.*",
                 "pecee/simple-router": "3.*",
                 "php": ">=5.4.0",
                 "robmorgan/phinx": "^0.5.3"
@@ -277,20 +278,20 @@
                 "pecee",
                 "speed"
             ],
-            "time": "2017-02-12 19:46:24"
+            "time": "2017-02-15 02:48:02"
         },
         {
             "name": "pecee/pixie",
-            "version": "2.0.9",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/skipperbent/pixie.git",
-                "reference": "b16e81f57a8d1772eab4e33e6d0b25e283a5585b"
+                "url": "https://github.com/skipperbent/pecee-pixie.git",
+                "reference": "d52e5153c54e2a01d650419d7b96fd414cc344b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pixie/zipball/b16e81f57a8d1772eab4e33e6d0b25e283a5585b",
-                "reference": "b16e81f57a8d1772eab4e33e6d0b25e283a5585b",
+                "url": "https://api.github.com/repos/skipperbent/pecee-pixie/zipball/d52e5153c54e2a01d650419d7b96fd414cc344b7",
+                "reference": "d52e5153c54e2a01d650419d7b96fd414cc344b7",
                 "shasum": ""
             },
             "require": {
@@ -303,8 +304,8 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Pixie": "src/"
+                "psr-4": {
+                    "Pecee\\Pixie\\": "src/Pecee/Pixie/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -328,30 +329,34 @@
                     "role": "Developer"
                 }
             ],
-            "description": "A lightweight, expressive, framework agnostic query builder for PHP. This fork aims to fix and deploy features quicker than the original.",
+            "description": "Lightweight, fast query-builder for PHP based on Laravel Eloquent but with less overhead.",
             "homepage": "https://github.com/skipperbent/pixie",
             "keywords": [
                 "database",
+                "eloquent",
                 "mysql",
+                "pecee",
+                "pixie",
                 "postgresql",
                 "query builder",
+                "querybuilder",
                 "sql",
                 "sqlite"
             ],
-            "time": "2016-12-12 11:21:16"
+            "time": "2017-02-15 01:07:53"
         },
         {
             "name": "pecee/simple-router",
-            "version": "3.0.1",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/simple-php-router.git",
-                "reference": "e913dd98da942fe9a040b3f6b724ca7c9d09b063"
+                "reference": "9d2bffcd020dcb1902ffd8c8147f01fa25d29e92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/e913dd98da942fe9a040b3f6b724ca7c9d09b063",
-                "reference": "e913dd98da942fe9a040b3f6b724ca7c9d09b063",
+                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/9d2bffcd020dcb1902ffd8c8147f01fa25d29e92",
+                "reference": "9d2bffcd020dcb1902ffd8c8147f01fa25d29e92",
                 "shasum": ""
             },
             "require": {
@@ -383,7 +388,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2017-02-12 19:48:02"
+            "time": "2017-02-15 02:29:16"
         },
         {
             "name": "psr/log",

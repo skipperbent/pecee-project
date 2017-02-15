@@ -5,15 +5,18 @@ use Demo\Model\Company;
 use Demo\UI\Validation\NotNullOrEmpty;
 use Pecee\Controller\ControllerBase;
 
-class CompanyController extends ControllerBase {
+class CompanyController extends ControllerBase
+{
 
-    public function index() {
+    public function index()
+    {
 
         response()->json(Company::all()->toArray());
 
     }
 
-    public function store() {
+    public function store()
+    {
 
         $this->validate([
             'name' => new NotNullOrEmpty(),
@@ -22,14 +25,15 @@ class CompanyController extends ControllerBase {
         $company = new Company();
         $company->save([
             'name' => input()->get('name'),
-            'ip' => request()->getIp(),
+            'ip'   => request()->getIp(),
         ]);
 
         $this->show($company->id);
 
     }
 
-    public function update($id) {
+    public function update($id)
+    {
 
         $company = Company::findOrFail($id)->save([
             'name' => input()->get('name'),
@@ -38,18 +42,20 @@ class CompanyController extends ControllerBase {
         $this->show($company->id);
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
 
         $company = Company::findOrFail($id);
         $company->delete();
 
         response()->json([
-            'id' => $id,
+            'id'      => $id,
             'success' => true,
         ]);
     }
 
-    public function show($id) {
+    public function show($id)
+    {
 
         response()->json(Company::findOrFail($id)->toArray());
 

@@ -1,28 +1,27 @@
 {
- 	"name": "pecee/project",
- 	"description": "Template for setting up new project using the Pecee framework.",
- 	"keywords": [
-		"framework",
-		"pecee",
-		"project"
-	],
-	"license": "MIT",
-	"type": "project",
-	"require": {
-		"pecee/framework": "3.*"
-	},
-	"require-dev": {
-
-	},
-	"config": {
-		"preferred-install": "dist"
-	},
-	"scripts": {
-		"post-root-package-install": [
-			"php -r \"copy('.env.example', '.env');\""
-		],
-		"post-create-project-cmd": [
-			"php pecee key:generate"
-		]
-	}
+  "name": "pecee/project",
+  "description": "Template for setting up new project using the Pecee framework.",
+  "keywords": [
+    "framework",
+    "pecee",
+    "project"
+  ],
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "pecee/framework": "3.*"
+  },
+  "require-dev": {
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "php pecee env:key-generate"
+    ]
+  }
 }

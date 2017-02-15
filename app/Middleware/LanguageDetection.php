@@ -5,22 +5,22 @@ use Pecee\Cookie;
 use Pecee\Http\Middleware\BaseMiddleware;
 use Pecee\Http\Request;
 
-class LanguageDetection extends BaseMiddleware {
-
+class LanguageDetection extends BaseMiddleware
+{
     protected $supportedLanguages = [
         'da_dk',
-        'en_gb'
+        'en_gb',
     ];
 
-    public function handle(Request $request){
-
+    public function handle(Request $request)
+    {
         $locale = 'en_gb';
 
-        if(Cookie::get('lang')) {
+        if (Cookie::get('lang')) {
             $locale = Cookie::get('lang');
         }
 
-        if(input()->get('lang') && in_array(strtolower(input()->get('lang')), $this->supportedLanguages) === true) {
+        if (input()->get('lang') && in_array(strtolower(input()->get('lang')), $this->supportedLanguages, true) === true) {
             /* Site main language */
             $locale = input()->get('lang');
 

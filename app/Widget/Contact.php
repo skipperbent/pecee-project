@@ -1,14 +1,15 @@
 <?php
 namespace Demo\Widget;
 
-class Contact extends SiteAbstract {
+class Contact extends Site
+{
+    public function __construct()
+    {
+        parent::__construct();
 
-	public function __construct() {
-		parent::__construct();
+        $this->prependSiteTitle(lang('Contact.Contact'));
 
-		$this->prependSiteTitle(lang('Contact.Contact'));
-
-		$this->mainMenu->getItem(2)->addClass('active');
-	}
+        $this->mainMenu->findItemByUrl(url('page.contact'))->addClass('active');
+    }
 
 }

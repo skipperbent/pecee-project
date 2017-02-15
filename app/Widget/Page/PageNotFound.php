@@ -1,16 +1,17 @@
 <?php
 namespace Demo\Widget\Page;
 
-use Demo\Widget\SiteAbstract;
+use Demo\Widget\Site;
 
-class PageNotFound extends SiteAbstract {
-
-    public function __construct() {
+class PageNotFound extends Site
+{
+    public function __construct()
+    {
         parent::__construct();
 
         $this->prependSiteTitle(lang('PageNotFound.PageNotFound'));
 
-        $this->mainMenu->getItem(0)->addClass('active');
+        $this->mainMenu->findItemByUrl(url('home'))->addClass('active');
     }
 
 }

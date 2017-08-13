@@ -11,6 +11,9 @@
   "require": {
     "pecee/framework": "3.*"
   },
+  "support": {
+    "source": "https://github.com/skipperbent/pecee-project"
+  },
   "require-dev": {
   },
   "config": {

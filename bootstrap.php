@@ -27,3 +27,9 @@ require_once 'config/app.php';
 if(isset($app['db'])) {
     new \Pecee\Pixie\Connection($app['db']['driver'], $app['db']);
 }
+
+if (PHP_SAPI === 'cli') {
+    /* Load routes so url() can be used in cli-mode */
+    \Pecee\Application\Router::init();
+    \Pecee\Application\Router::router()->loadRoutes();
+}

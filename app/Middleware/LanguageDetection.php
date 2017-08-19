@@ -20,11 +20,11 @@ class LanguageDetection extends BaseMiddleware
             $locale = Cookie::get('lang');
         }
 
-        if (input()->get('lang') && in_array(strtolower(input()->get('lang')), $this->supportedLanguages, true) === true) {
+        if (input('lang') && in_array(strtolower(input('lang')), $this->supportedLanguages, true) === true) {
             /* Site main language */
-            $locale = input()->get('lang');
+            $locale = input('lang');
 
-            Cookie::create('lang', input()->get('lang'));
+            Cookie::create('lang', input('lang'));
         }
 
         app()->setLocale($locale);

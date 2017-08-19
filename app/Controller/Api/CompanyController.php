@@ -24,7 +24,7 @@ class CompanyController extends ControllerBase
 
         $company = new Company();
         $company->save([
-            'name' => input()->get('name'),
+            'name' => input('name'),
             'ip'   => request()->getIp(),
         ]);
 
@@ -36,7 +36,7 @@ class CompanyController extends ControllerBase
     {
 
         $company = Company::findOrFail($id)->save([
-            'name' => input()->get('name'),
+            'name' => input('name'),
         ]);
 
         $this->show($company->id);

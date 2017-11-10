@@ -4,7 +4,6 @@
  *       MIGRATIONS CONFIGURATION
  * --------------------------------------
  */
-require 'bootstrap.php';
 
 return [
     'paths' => [

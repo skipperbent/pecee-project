@@ -19,8 +19,8 @@ Point your webserver to projects `public`.
 Create new migration by running 
 
 ```php 
-./pecee migrations create CreateDemoTable
-./pecee migrations migrate
+php ./pecee phinx migrations create CreateDemoTable
+php ./pecee phinx migrate
 ```
 
 

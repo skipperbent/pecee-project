@@ -19,7 +19,7 @@ Router::group(['exceptionHandler' => Demo\Handler\ExceptionHandler::class], func
 
     // Api
     Router::group(['prefix' => '/api'], function() {
-        Router::resource('/company', 'Api\\CompanyController');
+        Router::resource('/company', 'Api\CompanyController');
     });
 
 });

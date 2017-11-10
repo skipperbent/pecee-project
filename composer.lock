@@ -234,16 +234,16 @@
         },
         {
             "name": "pecee/framework",
-            "version": "3.9.0.1",
+            "version": "3.9.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/pecee.git",
-                "reference": "6debe40ce7d9c63571a3adb593595c0372706bb5"
+                "reference": "9e4965f18d8a9347d668894faaa46f8a2b8f5097"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/6debe40ce7d9c63571a3adb593595c0372706bb5",
-                "reference": "6debe40ce7d9c63571a3adb593595c0372706bb5",
+                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/9e4965f18d8a9347d668894faaa46f8a2b8f5097",
+                "reference": "9e4965f18d8a9347d668894faaa46f8a2b8f5097",
                 "shasum": ""
             },
             "require": {
@@ -282,7 +282,7 @@
                 "pecee",
                 "speed"
             ],
-            "time": "2017-11-10 15:21:08"
+            "time": "2017-11-10 16:15:53"
         },
         {
             "name": "pecee/pixie",

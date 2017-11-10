@@ -18,7 +18,8 @@ class Companies extends Site
 
         $this->prependSiteTitle(lang('Companies.Companies'));
 
-        $this->mainMenu->findItemByUrl(url('companies'))->addClass('active');
+        //die(var_dump(url('companies', '')));
+        $this->mainMenu->findItemByUrl(url('companies', ''))->addClass('active');
     }
 
 }

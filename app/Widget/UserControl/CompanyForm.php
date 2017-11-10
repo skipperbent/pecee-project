@@ -35,7 +35,7 @@ class CompanyForm extends UserControl
             if($this->hasErrors() === false) {
 
                 $this->company->save([
-                    'name' => input()->get('name'),
+                    'name' => input('name'),
                     'ip'   => request()->getIp(),
                 ]);
 

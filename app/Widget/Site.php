@@ -30,7 +30,7 @@ abstract class Site extends Widget
             ->addClass('nav-item')
             ->addLinkAttribute('class', 'nav-link');
 
-        $this->mainMenu->addItem(lang('Companies.Companies'), url('companies', ['id' => '']))
+        $this->mainMenu->addItem(lang('Companies.Companies'), url('companies', ''))
             ->addClass('nav-item')
             ->addLinkAttribute('class', 'nav-link');
 

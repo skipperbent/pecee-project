@@ -10,7 +10,7 @@ return [
         'migrations' => 'database/migrations',
         'seeds' => 'database/seeds',
     ],
-    'migration_base_class' => '\Pecee\DB\Migration',
+    'migration_base_class' => \Pecee\DB\Migration::class,
     'environments' => [
         'default_migration_table' => 'migrations',
         'default_database' => 'dev',

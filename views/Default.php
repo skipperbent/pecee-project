@@ -1,4 +1,4 @@
-<? /* @var $this \Demo\Widget\SiteAbstract */ ?>
+<? /* @var $this \Demo\Widget\Site */ ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,21 +9,29 @@
         <?= $this->printJs(); ?>
     </head>
 	<body>
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="<?= url('home'); ?>">Pecee</a>
 
-        <a class="navbar-brand" href="<?= url('home'); ?>">Logo</a>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <?= $this->mainMenu; ?>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <?= $this->mainMenu; ?>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-5"><?= lang('Home.WelcomeTitle'); ?></h1>
+                <p class="lead">
+                    <?= lang('Home.WelcomeDescription'); ?>
+                </p>
+            </div>
         </div>
-    </nav>
 
 		<div class="container">
 			<div class="starter-template">
@@ -32,7 +40,7 @@
 		</div>
 
         <footer>
-            <div class="container-fluid">
+            <div class="container">
                 <div class="form-inline">
                 <?= $this->form()->selectStart('lang', ['da_dk' => 'Dansk', 'en_gb' => 'English'], $this->getLanguage())
                     ->addAttribute('onchange', 'top.location.href=\''. url('home') .'?lang=\' + this[selectedIndex].value;')

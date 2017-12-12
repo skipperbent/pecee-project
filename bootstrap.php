@@ -28,12 +28,13 @@ if (count(app()->getModules()) > 0) {
     });
 }
 
-\Pecee\Application\Router::init();
+use Pecee\Application\Router;
+
+Router::init();
 
 require_once __DIR__ . '/routes/web.php';
 
 if (PHP_SAPI === 'cli') {
     /* Load routes so url() can be used in cli-mode */
-    \Pecee\Application\Router::init();
-    \Pecee\Application\Router::router()->loadRoutes();
+    Router::router()->loadRoutes();
 }

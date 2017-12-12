@@ -14,27 +14,25 @@ abstract class Site extends Widget
 
         // GetSite contains information about the site - here we can add javascript and change styling etc.
         $this->getSite()->setTitle('Pecee Demo Project');
-        $this->getSite()->addWrappedCss('../bower/bootstrap/dist/css/bootstrap.min.css');
-        $this->getSite()->addWrappedCss('../bower/bootstrap/dist/css/bootstrap-theme-min.css');
-        $this->getSite()->addWrappedCss('style.css');
 
-        $this->getSite()->addWrappedJs('../bower/jquery/dist/jquery.min.js');
-        $this->getSite()->addWrappedJs('../bower/tether/dist/js/tether.min.js');
-        $this->getSite()->addWrappedJs('../bower/bootstrap/dist/js/bootstrap.min.js');
-        $this->getSite()->addWrappedJs('global.js');
+        $this->getSite()->addCss('/css/app.css');
+        $this->getSite()->addJs('/js/app.js');
 
         $this->mainMenu = new Menu();
         $this->mainMenu->addClass('navbar-nav mr-auto');
 
-        $this->mainMenu->addItem(lang('Home.Home'), url('home'))
+        $this->mainMenu
+            ->addItem(lang('Home.Home'), url('home'))
             ->addClass('nav-item')
             ->addLinkAttribute('class', 'nav-link');
 
-        $this->mainMenu->addItem(lang('Companies.Companies'), url('companies', ''))
+        $this->mainMenu
+            ->addItem(lang('Companies.Companies'), url('companies', ''))
             ->addClass('nav-item')
             ->addLinkAttribute('class', 'nav-link');
 
-        $this->mainMenu->addItem(lang('Contact.Contact'), url('page.contact'))
+        $this->mainMenu
+            ->addItem(lang('Contact.Contact'), url('page.contact'))
             ->addClass('nav-item')
             ->addLinkAttribute('class', 'nav-link');
     }

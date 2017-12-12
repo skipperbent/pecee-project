@@ -1,10 +1,11 @@
 {
   "name": "pecee/project",
-  "description": "Template for setting up new project using the Pecee framework.",
+  "description": "Sample project using the lightweight Pecee framework for PHP.",
   "keywords": [
     "framework",
     "pecee",
-    "project"
+    "project",
+    "sample"
   ],
   "license": "MIT",
   "type": "project",
@@ -25,7 +26,8 @@
       "php -r \"copy('.env.example', '.env');\""
     ],
     "post-create-project-cmd": [
-      "php pecee env:key-generate"
+      "php pecee env:key-generate",
+      "composer update"
     ]
   }
 }

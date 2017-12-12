@@ -1,28 +1,33 @@
-# README
+# pecee-project
 
-This is a sample-project that is created using PHP using the Pecee-framework.
-
-## Sample app
-
-For a demonstration app, please look inside the app folder. This folder is not used by the framework and can be removed at any time.
+This is a sample-project created using the Pecee-framework; a fast, lightweight, open-source MVC framework created in PHP, based on Microsoft MVVM.
 
 ## Installation
 
+**Requirements**
+- PHP 5.6 or higher
+
+Yarn is recommended for webpack mixer to work.
+
 ```
-composer create-project pecee/project "demo"
+composer create-project pecee/project "sample-app"
 ```
 
-Point your webserver to projects `public`.
+Point your webserver to projects `sample-app/public`.
 
 ## Migrations
 
-Create new migration by running 
+Create new migration by running the following command:
 
-```php 
-php ./pecee phinx migrations create CreateDemoTable
-php ./pecee phinx migrate
+```
+php pecee phinx migrations create CreateDemoTable
 ```
 
+Execute migrations by running the following command:
+
+```
+php pecee phinx migrate
+```
 
 ## The MIT License (MIT)
 

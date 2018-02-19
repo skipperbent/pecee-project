@@ -4,11 +4,17 @@ set_include_path($abspath . PATH_SEPARATOR . $abspath . 'app' . DIRECTORY_SEPARA
 
 require_once 'vendor/pecee/framework/boot.php';
 
+if (app()->getDebugEnabled() === true) {
+    $whoops = new \Whoops\Run;
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $whoops->register();
+}
+
 $app = [];
 
 require_once 'config/app.php';
 
-if (isset($app['db'])) {
+if (isset($app['db']) === true) {
     new \Pecee\Pixie\Connection($app['db']['driver'], $app['db']);
 }
 

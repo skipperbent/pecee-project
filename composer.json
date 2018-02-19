@@ -10,7 +10,9 @@
   "license": "MIT",
   "type": "project",
   "require": {
-    "pecee/framework": "3.*"
+    "pecee/framework": "3.*",
+    "filp/whoops": "^2.1",
+    "pecee/pixie": "4.*"
   },
   "support": {
     "source": "https://github.com/skipperbent/pecee-project"

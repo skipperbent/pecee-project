@@ -15,7 +15,18 @@ $app = [];
 require_once 'config/app.php';
 
 if (isset($app['db']) === true) {
-    new \Pecee\Pixie\Connection($app['db']['driver'], $app['db']);
+    app()->db = new \Pecee\Pixie\Connection($app['db']['driver'], $app['db']);
+
+    if (app()->getDebugEnabled() === true) {
+
+        app()->db->getEventHandler()->registerEvent('before-*', null, function (\Pecee\Pixie\QueryBuilder\QueryObject $qo) {
+            debug('START QUERY: ' . $qo->getRawSql());
+        });
+
+        app()->db->getEventHandler()->registerEvent('after-*', null, function (\Pecee\Pixie\QueryBuilder\QueryObject $qo) {
+            debug('END QUERY: ' . $qo->getRawSql());
+        });
+    }
 }
 
 if (count(app()->getModules()) > 0) {

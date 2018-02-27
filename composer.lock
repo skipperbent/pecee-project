@@ -233,16 +233,16 @@
         },
         {
             "name": "pecee/framework",
-            "version": "3.10.0.0",
+            "version": "3.10.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/pecee.git",
-                "reference": "35827cf68ba4c6f145f788f873de0a8bd5cb395a"
+                "reference": "45fbe496deb56669f9cbe1a804021031a85fee19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/35827cf68ba4c6f145f788f873de0a8bd5cb395a",
-                "reference": "35827cf68ba4c6f145f788f873de0a8bd5cb395a",
+                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/45fbe496deb56669f9cbe1a804021031a85fee19",
+                "reference": "45fbe496deb56669f9cbe1a804021031a85fee19",
                 "shasum": ""
             },
             "require": {
@@ -251,6 +251,9 @@
                 "pecee/simple-router": "3.*",
                 "php": ">=5.4.0",
                 "robmorgan/phinx": "^0.5.3"
+            },
+            "require-dev": {
+                "pecee/pixie": "4.*"
             },
             "suggest": {
                 "filp/whoops": "^2.1",
@@ -283,20 +286,20 @@
                 "pecee",
                 "speed"
             ],
-            "time": "2018-02-19T15:05:01+00:00"
+            "time": "2018-02-27T07:35:45+00:00"
         },
         {
             "name": "pecee/pixie",
-            "version": "4.2.5",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/pecee-pixie.git",
-                "reference": "b6744599f8514eb4bb6d521155cb152242b5bd93"
+                "reference": "f4e8848f5aff1b6c1e55256954e9f1e90c4714f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pecee-pixie/zipball/b6744599f8514eb4bb6d521155cb152242b5bd93",
-                "reference": "b6744599f8514eb4bb6d521155cb152242b5bd93",
+                "url": "https://api.github.com/repos/skipperbent/pecee-pixie/zipball/f4e8848f5aff1b6c1e55256954e9f1e90c4714f8",
+                "reference": "f4e8848f5aff1b6c1e55256954e9f1e90c4714f8",
                 "shasum": ""
             },
             "require": {
@@ -347,20 +350,20 @@
                 "sql",
                 "sqlite"
             ],
-            "time": "2018-01-16T23:53:01+00:00"
+            "time": "2018-02-27T07:33:27+00:00"
         },
         {
             "name": "pecee/simple-router",
-            "version": "3.4.11.0",
+            "version": "3.6.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/simple-php-router.git",
-                "reference": "3ba9dd01f054c914b3046af681afd9d6a754ff36"
+                "reference": "6e247f811fd6e8fce204bc9ed461a6ac75879074"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/3ba9dd01f054c914b3046af681afd9d6a754ff36",
-                "reference": "3ba9dd01f054c914b3046af681afd9d6a754ff36",
+                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/6e247f811fd6e8fce204bc9ed461a6ac75879074",
+                "reference": "6e247f811fd6e8fce204bc9ed461a6ac75879074",
                 "shasum": ""
             },
             "require": {
@@ -400,7 +403,7 @@
                 "simple-php-router",
                 "url-handling"
             ],
-            "time": "2018-02-14T11:39:19+00:00"
+            "time": "2018-02-27T08:04:57+00:00"
         },
         {
             "name": "psr/log",

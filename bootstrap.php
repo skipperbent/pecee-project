@@ -19,12 +19,12 @@ if (isset($app['db']) === true) {
 
     if (app()->getDebugEnabled() === true) {
 
-        app()->db->getEventHandler()->registerEvent('before-*', null, function (\Pecee\Pixie\QueryBuilder\QueryObject $qo) {
-            debug('START QUERY: ' . $qo->getRawSql());
+        app()->db->registerEvent('before-*', null, function (\Pecee\Pixie\Event\EventArguments $e) {
+            debug('START QUERY: ' . $e->getQuery()->getRawSql());
         });
 
-        app()->db->getEventHandler()->registerEvent('after-*', null, function (\Pecee\Pixie\QueryBuilder\QueryObject $qo) {
-            debug('END QUERY: ' . $qo->getRawSql());
+        app()->db->registerEvent('after-*', null, function (\Pecee\Pixie\Event\EventArguments $e) {
+            debug('END QUERY: ' . $e->getQuery()->getRawSql());
         });
     }
 }

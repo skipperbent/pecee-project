@@ -15,15 +15,15 @@ $app = [];
 require_once 'config/app.php';
 
 if (isset($app['db']) === true) {
-    app()->db = new \Pecee\Pixie\Connection($app['db']['driver'], $app['db']);
+    $db = new \Pecee\Pixie\Connection($app['db']['driver'], $app['db']);
 
     if (app()->getDebugEnabled() === true) {
 
-        app()->db->registerEvent('before-*', null, function (\Pecee\Pixie\Event\EventArguments $e) {
+        $db->registerEvent('before-*', null, function (\Pecee\Pixie\Event\EventArguments $e) {
             debug('START QUERY: ' . $e->getQuery()->getRawSql());
         });
 
-        app()->db->registerEvent('after-*', null, function (\Pecee\Pixie\Event\EventArguments $e) {
+        $db->registerEvent('after-*', null, function (\Pecee\Pixie\Event\EventArguments $e) {
             debug('END QUERY: ' . $e->getQuery()->getRawSql());
         });
     }

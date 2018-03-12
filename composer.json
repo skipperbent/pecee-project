@@ -11,8 +11,8 @@
   "type": "project",
   "require": {
     "pecee/framework": "3.*",
-    "filp/whoops": "^2.1",
-    "pecee/pixie": "4.*"
+    "pecee/pixie": "4.*",
+    "filp/whoops": "^2.1"
   },
   "support": {
     "source": "https://github.com/skipperbent/pecee-project"

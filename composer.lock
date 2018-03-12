@@ -180,20 +180,20 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.23.0",
+            "version": "1.24.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "4a874a39b2b00d7e0146cd46fab6f47c41ce9e65"
+                "reference": "bba6c6e410c6b4317e37a9474aeaa753808c3875"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4a874a39b2b00d7e0146cd46fab6f47c41ce9e65",
-                "reference": "4a874a39b2b00d7e0146cd46fab6f47c41ce9e65",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bba6c6e410c6b4317e37a9474aeaa753808c3875",
+                "reference": "bba6c6e410c6b4317e37a9474aeaa753808c3875",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
+                "php": ">=5.3.9",
                 "symfony/translation": "~2.6 || ~3.0 || ~4.0"
             },
             "require-dev": {
@@ -229,20 +229,20 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-02-28T09:22:05+00:00"
+            "time": "2018-03-10T10:10:14+00:00"
         },
         {
             "name": "pecee/framework",
-            "version": "3.10.0.16",
+            "version": "3.10.0.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/pecee.git",
-                "reference": "b0a037b0013c75ebda164fe14f543c17b1389ccf"
+                "reference": "abf7bae92039fe740ede2e8a1873444db80a4eac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/b0a037b0013c75ebda164fe14f543c17b1389ccf",
-                "reference": "b0a037b0013c75ebda164fe14f543c17b1389ccf",
+                "url": "https://api.github.com/repos/skipperbent/pecee/zipball/abf7bae92039fe740ede2e8a1873444db80a4eac",
+                "reference": "abf7bae92039fe740ede2e8a1873444db80a4eac",
                 "shasum": ""
             },
             "require": {
@@ -286,24 +286,24 @@
                 "pecee",
                 "speed"
             ],
-            "time": "2018-03-04T15:50:28+00:00"
+            "time": "2018-03-09T02:22:11+00:00"
         },
         {
             "name": "pecee/pixie",
-            "version": "4.5.0",
+            "version": "4.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skipperbent/pecee-pixie.git",
-                "reference": "c7adabffe9308b78d5aafc5d84a17780e3aab4af"
+                "reference": "f82e6e3c1ce508666d64530773701dde1d6516ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/pecee-pixie/zipball/c7adabffe9308b78d5aafc5d84a17780e3aab4af",
-                "reference": "c7adabffe9308b78d5aafc5d84a17780e3aab4af",
+                "url": "https://api.github.com/repos/skipperbent/pecee-pixie/zipball/f82e6e3c1ce508666d64530773701dde1d6516ee",
+                "reference": "f82e6e3c1ce508666d64530773701dde1d6516ee",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0"
+                "php": ">=7.1"
             },
             "require-dev": {
                 "mockery/mockery": "^1",
@@ -350,7 +350,7 @@
                 "sql",
                 "sqlite"
             ],
-            "time": "2018-03-04T15:47:32+00:00"
+            "time": "2018-03-12T12:23:04+00:00"
         },
         {
             "name": "pecee/simple-router",
@@ -515,7 +515,7 @@
         },
         {
             "name": "symfony/config",
-            "version": "v3.4.5",
+            "version": "v3.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
@@ -578,7 +578,7 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.4.5",
+            "version": "v3.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -647,7 +647,7 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.0.5",
+            "version": "v4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
@@ -703,7 +703,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.0.5",
+            "version": "v4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -811,7 +811,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v4.0.5",
+            "version": "v4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -879,7 +879,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.4.5",
+            "version": "v3.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",

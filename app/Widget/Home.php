@@ -1,4 +1,5 @@
 <?php
+
 namespace Demo\Widget;
 
 class Home extends Site

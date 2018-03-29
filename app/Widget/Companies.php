@@ -1,4 +1,5 @@
 <?php
+
 namespace Demo\Widget;
 
 use Demo\Model\Company;
@@ -8,6 +9,11 @@ class Companies extends Site
     protected $companyId;
     protected $companies;
 
+    /**
+     * Companies constructor.
+     * @param $companyId
+     * @throws \Pecee\Pixie\Exception
+     */
     public function __construct($companyId)
     {
         parent::__construct();

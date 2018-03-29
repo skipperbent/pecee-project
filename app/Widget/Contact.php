@@ -1,4 +1,5 @@
 <?php
+
 namespace Demo\Widget;
 
 class Contact extends Site

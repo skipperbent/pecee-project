@@ -1,4 +1,5 @@
 <?php
+
 namespace Demo\Controller;
 
 use Demo\Widget\Companies;
@@ -7,14 +8,19 @@ use Demo\Widget\Home;
 class DefaultController
 {
 
-    public function index()
+    public function index(): string
     {
-        echo new Home();
+        return new Home();
     }
 
-    public function companies($companyId = null)
+    /**
+     * @param null $companyId
+     * @return string
+     * @throws \Pecee\Pixie\Exception
+     */
+    public function companies($companyId = null): string
     {
-        echo new Companies($companyId);
+        return new Companies($companyId);
     }
 
 }

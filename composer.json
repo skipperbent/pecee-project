@@ -10,15 +10,15 @@
   "license": "MIT",
   "type": "project",
   "require": {
-    "pecee/framework": "3.*",
-    "filp/whoops": "^2.1",
-    "pecee/pixie": "4.*"
+    "pecee/framework": "^3.0",
+    "pecee/pixie": "^4.0",
+    "filp/whoops": "^2.1"
   },
   "support": {
     "source": "https://github.com/skipperbent/pecee-project"
   },
   "require-dev": {
-    "pecee/framework": "3.*"
+
   },
   "config": {
     "preferred-install": "dist"

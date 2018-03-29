@@ -1,4 +1,5 @@
 <?php
+
 namespace Demo\Middleware;
 
 use Pecee\Cookie;
@@ -12,7 +13,7 @@ class LanguageDetection extends BaseMiddleware
         'en_gb',
     ];
 
-    public function handle(Request $request)
+    public function handle(Request $request): void
     {
         $locale = 'en_gb';
 
@@ -20,7 +21,7 @@ class LanguageDetection extends BaseMiddleware
             $locale = Cookie::get('lang');
         }
 
-        if (input('lang') && in_array(strtolower(input('lang')), $this->supportedLanguages, true) === true) {
+        if (input('lang') && \in_array(strtolower(input('lang')), $this->supportedLanguages, true) === true) {
             /* Site main language */
             $locale = input('lang');
 

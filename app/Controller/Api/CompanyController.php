@@ -1,4 +1,5 @@
 <?php
+
 namespace Demo\Controller\Api;
 
 use Demo\Model\Company;
@@ -8,16 +9,26 @@ use Pecee\Controller\ControllerBase;
 class CompanyController extends ControllerBase
 {
 
-    public function index()
+    /**
+     * @return string
+     * @throws \Pecee\Exceptions\InvalidArgumentException
+     * @throws \Pecee\Pixie\Exception
+     */
+    public function index(): string
     {
-
-        response()->json(Company::all()->toArray());
-
+        return response()->json(Company::instance()->all()->toArray());
     }
 
-    public function store()
+    /**
+     * @return string
+     * @throws \Pecee\Exceptions\InvalidArgumentException
+     * @throws \Pecee\Exceptions\ValidationException
+     * @throws \Pecee\Model\Exceptions\ModelException
+     * @throws \Pecee\Pixie\Exception
+     * @throws \Pecee\Model\Exceptions\ModelNotFoundException
+     */
+    public function store(): string
     {
-
         $this->validate([
             'name' => new NotNullOrEmpty(),
         ]);
@@ -28,37 +39,55 @@ class CompanyController extends ControllerBase
             'ip'   => request()->getIp(),
         ]);
 
-        $this->show($company->id);
-
+        return $this->show($company->id);
     }
 
-    public function update($id)
+    /**
+     * @param $id
+     * @return string
+     * @throws \Pecee\Exceptions\InvalidArgumentException
+     * @throws \Pecee\Model\Exceptions\ModelException
+     * @throws \Pecee\Model\Exceptions\ModelNotFoundException
+     * @throws \Pecee\Pixie\Exception
+     */
+    public function update($id): string
     {
-
-        $company = Company::findOrFail($id)->save([
+        $company = Company::instance()->findOrFail($id)->save([
             'name' => input('name'),
         ]);
 
-        $this->show($company->id);
+        return $this->show($company->id);
     }
 
-    public function destroy($id)
+    /**
+     * @param $id
+     * @return string
+     * @throws \Pecee\Exceptions\InvalidArgumentException
+     * @throws \Pecee\Model\Exceptions\ModelException
+     * @throws \Pecee\Model\Exceptions\ModelNotFoundException
+     * @throws \Pecee\Pixie\Exception
+     */
+    public function destroy($id): string
     {
-
-        $company = Company::findOrFail($id);
+        $company = Company::instance()->findOrFail($id);
         $company->delete();
 
-        response()->json([
+        return response()->json([
             'id'      => $id,
             'success' => true,
         ]);
     }
 
-    public function show($id)
+    /**
+     * @param $id
+     * @return string
+     * @throws \Pecee\Exceptions\InvalidArgumentException
+     * @throws \Pecee\Model\Exceptions\ModelNotFoundException
+     * @throws \Pecee\Pixie\Exception
+     */
+    public function show($id): string
     {
-
-        response()->json(Company::findOrFail($id)->toArray());
-
+        return response()->json(Company::instance()->findOrFail($id)->toArray());
     }
 
 }

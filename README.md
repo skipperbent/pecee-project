@@ -5,7 +5,7 @@ This is a sample-project created using the Pecee-framework; a fast, lightweight,
 ## Installation
 
 **Requirements**
-- PHP 5.6 or higher
+- PHP 7.1 or higher
 
 Yarn is recommended for webpack mixer to work.
 

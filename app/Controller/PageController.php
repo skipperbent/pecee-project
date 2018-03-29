@@ -1,4 +1,5 @@
 <?php
+
 namespace Demo\Controller;
 
 use Demo\Widget\Contact;
@@ -7,14 +8,14 @@ use Demo\Widget\Page\PageNotFound;
 class PageController
 {
 
-    public function contact()
+    public function contact(): string
     {
-        echo new Contact();
+        return new Contact();
     }
 
-    public function notFound()
+    public function notFound(): string
     {
-        echo new PageNotFound();
+        return new PageNotFound();
     }
 
 }

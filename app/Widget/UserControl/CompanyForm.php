@@ -9,6 +9,12 @@ class CompanyForm extends UserControl
 {
     protected $company;
 
+    /**
+     * CompanyForm constructor.
+     * @param null $companyId
+     * @throws \Pecee\Model\Exceptions\ModelException
+     * @throws \Pecee\Pixie\Exception
+     */
     public function __construct($companyId = null)
     {
         parent::__construct();
@@ -32,7 +38,7 @@ class CompanyForm extends UserControl
                 'name' => [new NotNullOrEmpty()],
             ]);
 
-            if($this->hasErrors() === false) {
+            if ($this->hasErrors() === false) {
 
                 $this->company->save([
                     'name' => input('name'),

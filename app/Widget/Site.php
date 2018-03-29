@@ -1,4 +1,5 @@
 <?php
+
 namespace Demo\Widget;
 
 use Pecee\UI\Menu\Menu;
@@ -13,10 +14,10 @@ abstract class Site extends Widget
         parent::__construct();
 
         // GetSite contains information about the site - here we can add javascript and change styling etc.
-        $this->getSite()->setTitle('Pecee Demo Project');
-
-        $this->getSite()->addCss('/css/app.css');
-        $this->getSite()->addJs('/js/app.js');
+        $this->getSite()
+            ->setTitle('Pecee Demo Project')
+            ->addCss('/css/app.css')
+            ->addJs('/js/app.js');
 
         $this->mainMenu = new Menu();
         $this->mainMenu->addClass('navbar-nav mr-auto');

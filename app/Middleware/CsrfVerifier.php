@@ -1,4 +1,5 @@
 <?php
+
 namespace Demo\Middleware;
 
 use Pecee\Http\Middleware\BaseCsrfVerifier;

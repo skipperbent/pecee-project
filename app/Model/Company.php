@@ -7,9 +7,6 @@ use Pecee\Model\Model;
 
 class Company extends Model
 {
-
-    // Automatically update created_at + updated_at columns
-    protected $timestamps = true;
     protected $table = 'company';
 
     protected $columns = [

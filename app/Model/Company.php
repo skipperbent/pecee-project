@@ -15,19 +15,24 @@ class Company extends Model
         'ip',
     ];
 
-    // Hidden on toArray - useful for json output
-    protected $hidden = ['ip'];
-
     // Add method to toArray
-    protected $with = ['current_date'];
+    protected $with = ['current_date' => 'getCurrentDate'];
+
+    // Hidden on toArray - useful for json output
+    protected $without = ['ip'];
 
     public function __construct()
     {
         parent::__construct();
         $this->ip = request()->ip;
+
+        // Another way to include data
+        $this->with['current_week'] = static function (self $company) {
+            return Carbon::now()->format('W');
+        };
     }
 
-    public function currentDate()
+    public function getCurrentDate(): Carbon
     {
         return Carbon::now();
     }
@@ -37,7 +42,7 @@ class Company extends Model
      * @param string $name
      * @return static
      */
-    public function filterName($name)
+    public function filterName($name): self
     {
         return $this->where('name', '=', $name);
     }

@@ -14,7 +14,7 @@ use Pecee\UI\Form\Validation\ValidateNotNullOrEmpty;
 class NotNullOrEmpty extends ValidateNotNullOrEmpty
 {
 
-    public function getError()
+    public function getError(): string
     {
         return lang('Validation.Required', $this->input->getName());
     }

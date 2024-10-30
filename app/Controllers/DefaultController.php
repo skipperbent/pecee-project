@@ -1,24 +1,25 @@
 <?php
 
-namespace Demo\Controller;
+namespace Demo\Controllers;
 
 use Demo\Widget\Companies;
 use Demo\Widget\Home;
+use Pecee\Widget\Widget;
 
 class DefaultController
 {
 
-    public function index(): string
+    public function index(): Widget
     {
         return new Home();
     }
 
     /**
      * @param null $companyId
-     * @return string
+     * @return Widget
      * @throws \Pecee\Pixie\Exception
      */
-    public function companies($companyId = null): string
+    public function companies($companyId = null): Widget
     {
         return new Companies($companyId);
     }

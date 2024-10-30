@@ -4,8 +4,6 @@ set_include_path($abspath . PATH_SEPARATOR . $abspath . 'app' . DIRECTORY_SEPARA
 
 require_once 'vendor/pecee/framework/boot.php';
 
-
-
 $app = [];
 
 require_once 'config/app.php';
@@ -15,14 +13,16 @@ if (isset($app['db']) === true) {
 
     if (app()->getDebugEnabled() === true) {
 
-        $db->registerEvent('before-*', null, function (\Pecee\Pixie\Event\EventArguments $e) {
-            debug('START QUERY: ' . $e->getQuery()->getRawSql());
+        $db->registerEvent('before-*', function (\Pecee\Pixie\Event\EventArguments $e) {
+            debug('db', 'START QUERY: %s', str_replace('%', '%%', $e->getQuery()->getRawSql()));
         });
 
-        $db->registerEvent('after-*', null, function (\Pecee\Pixie\Event\EventArguments $e) {
-            debug('END QUERY: ' . $e->getQuery()->getRawSql());
+        $db->registerEvent('after-*', function (\Pecee\Pixie\Event\EventArguments $e) {
+            debug('db', 'END QUERY: %s', str_replace('%', '%%', $e->getQuery()->getRawSql()));
         });
     }
+
+    app()->setConnection($db);
 }
 
 if (count(app()->getModules()) > 0) {
@@ -48,6 +48,15 @@ Router::init();
 require_once __DIR__ . '/routes/web.php';
 
 if (PHP_SAPI === 'cli') {
+    /* Set default paths */
+    request()->setUrl(new \Pecee\Http\Url('/'));
+    request()->setHost(env('SITE_DOMAIN'));
+
     /* Load routes so url() can be used in cli-mode */
     Router::router()->loadRoutes();
+} else {
+    ini_set('session.cookie_samesite', 'None');
+    ini_set('session.cookie_secure', true);
+    ini_set('session.cookie_httponly', false);
+    session_set_cookie_params(['SameSite' => 'None', 'Secure' => true]);
 }

@@ -7,24 +7,21 @@ use Demo\UI\Validation\NotNullOrEmpty;
 
 class CompanyForm extends UserControl
 {
-    protected $company;
+    protected Company $company;
 
-    /**
-     * CompanyForm constructor.
-     * @param null $companyId
-     * @throws \Pecee\Model\Exceptions\ModelException
-     * @throws \Pecee\Pixie\Exception
-     */
-    public function __construct($companyId = null)
+    protected ?int $companyId;
+
+    public function __construct(?int $companyId = null)
     {
-        parent::__construct();
+        $this->companyId = $companyId;
+    }
 
-        $this->company = Company::instance()->where('id', '=', $companyId)->firstOrNew();
-
-        $exists = $this->company->exists();
+    protected function onLoad(): void
+    {
+        $this->company = Company::instance()->where('id', '=', $this->companyId)->firstOrNew();
 
         /* Set site title */
-        $siteTitle = $exists ? lang('Companies.EditCompany', $this->company->name) : lang('Companies.AddCompany');
+        $siteTitle = $this->company->exists() ? lang('Companies.EditCompany', $this->company->name) : lang('Companies.AddCompany');
         $this->prependSiteTitle($siteTitle);
 
         /* Set input names */
@@ -42,26 +39,20 @@ class CompanyForm extends UserControl
 
                 $this->company->save([
                     'name' => input('name'),
-                    'ip'   => request()->getIp(),
+                    'ip' => request()->getIp(),
                 ]);
 
-                if ($exists) {
-                    $this->setMessage(lang('Companies.CompanyUpdated'), 'success');
-                } else {
-                    $this->setMessage(lang('Companies.CompanySaved'), 'success');
-                }
+                $this->setMessage(
+                    lang($this->company->exists() ? 'Companies.CompanyUpdated' : 'Companies.CompanySaved'),
+                    'success'
+                );
 
                 response()->refresh();
 
             }
 
-            $this->saveInputValues([
-                'name',
-            ]);
-
             response()->refresh();
         }
-
     }
 
 }

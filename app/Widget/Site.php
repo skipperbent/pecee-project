@@ -2,43 +2,36 @@
 
 namespace Demo\Widget;
 
-use Pecee\UI\Menu\Menu;
+use Demo\UI\Menu\Menu;
 use Pecee\Widget\Widget;
 
 abstract class Site extends Widget
 {
-    protected $mainMenu;
+    protected Menu $mainMenu;
 
     public function __construct()
     {
-        parent::__construct();
-
         // GetSite contains information about the site - here we can add javascript and change styling etc.
         $this->getSite()
             ->setTitle('Pecee Demo Project')
             ->addCss('/css/app.css')
             ->addJs('/js/app.js');
 
-        $this->mainMenu = new Menu();
-        $this->mainMenu->addClass('navbar-nav mr-auto');
+        $this->mainMenu = (new Menu())->addClass('navbar-nav mr-auto');
 
-        $this->mainMenu
-            ->addItem(lang('Home.Home'), url('home'))
-            ->addClass('nav-item')
-            ->addLinkAttribute('class', 'nav-link');
+        $this->mainMenu->addItem(lang('Home.Home'), url('home'));
+        $this->mainMenu->addItem(lang('Companies.Companies'), url('companies', ''));
+        $this->mainMenu->addItem(lang('Contact.Contact'), url('page.contact'));
 
-        $this->mainMenu
-            ->addItem(lang('Companies.Companies'), url('companies', ''))
-            ->addClass('nav-item')
-            ->addLinkAttribute('class', 'nav-link');
-
-        $this->mainMenu
-            ->addItem(lang('Contact.Contact'), url('page.contact'))
-            ->addClass('nav-item')
-            ->addLinkAttribute('class', 'nav-link');
+        $this->setNavigationMenuItem();
     }
 
-    public function getLanguage()
+    protected function setNavigationMenuItem(?string $url = null): void
+    {
+        $this->mainMenu->findItemByUrl($url ?? url())?->addClass('active');
+    }
+
+    public function getLanguage(): string
     {
         return app()->getLocale();
     }

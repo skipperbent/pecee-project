@@ -1,4 +1,4 @@
-<? /* @var $this \Demo\Widget\Site */ ?>
+<?php /* @var $this \Demo\Widget\Site */ ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -45,7 +45,7 @@
         <footer>
             <div class="container">
                 <div class="form-inline">
-                <?= $this->form()->selectStart('lang', ['da_dk' => 'Dansk', 'en_gb' => 'English'], $this->getLanguage())
+                <?= $this->form()->selectStart('lang', ['Dansk' => 'da_dk', 'English' => 'en_gb'], $this->getLanguage())
                     ->addAttribute('onchange', 'top.location.href=\''. url('home') .'?lang=\' + this[selectedIndex].value;')
                     ->addClass('form-control col-1'); ?>
                 </div>

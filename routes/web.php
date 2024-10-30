@@ -7,9 +7,9 @@ use Pecee\Application\Router;
 
 Router::csrfVerifier(new \Demo\Middleware\CsrfVerifier());
 
-Router::group(['exceptionHandler' => Demo\Handler\ExceptionHandler::class], function() {
+Router::group(['exceptionHandler' => Demo\Handler\ExceptionHandler::class], static function () {
 
-    Router::group(['middleware' => Demo\Middleware\LanguageDetection::class], function() {
+    Router::group(['middleware' => Demo\Middleware\LanguageDetection::class], static function () {
 
         Router::get('/', 'DefaultController@index')->setName('home');
         Router::basic('/companies/{id?}', 'DefaultController@companies')->setName('companies');
@@ -18,8 +18,8 @@ Router::group(['exceptionHandler' => Demo\Handler\ExceptionHandler::class], func
     });
 
     // Api
-    Router::group(['prefix' => '/api'], function() {
-        Router::resource('/company', 'Api\CompanyController');
+    Router::group(['prefix' => '/api'], static function () {
+        Router::resource('/companies', 'Api\CompanyController');
     });
 
 });

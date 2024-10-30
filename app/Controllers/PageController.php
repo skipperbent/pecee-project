@@ -1,19 +1,20 @@
 <?php
 
-namespace Demo\Controller;
+namespace Demo\Controllers;
 
 use Demo\Widget\Contact;
 use Demo\Widget\Page\PageNotFound;
+use Pecee\Widget\Widget;
 
 class PageController
 {
 
-    public function contact(): string
+    public function contact(): Widget
     {
         return new Contact();
     }
 
-    public function notFound(): string
+    public function notFound(): Widget
     {
         return new PageNotFound();
     }

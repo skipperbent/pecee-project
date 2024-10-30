@@ -1,11 +1,11 @@
 let mix = require('laravel-mix');
 
-mix.options({
+/*mix.options({
     fileLoaderDirs: {
         fonts: 'fonts',
         images: 'img'
     }
-});
+});*/
 
 // Put your scripts here - compile with "yarn run dev"
 mix.setPublicPath('public');

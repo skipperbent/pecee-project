@@ -5,44 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61a39047-b68a-4ea1-8a2f-c02e4a434115" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/UI/Menu/Menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pecee-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pecee-project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/Api/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Api/CompanyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Middleware/CsrfVerifier.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Middleware/CsrfVerifier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Middleware/LanguageDetection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Middleware/LanguageDetection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/UI/Validation/NotNullOrEmpty.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UI/Validation/NotNullOrEmpty.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Widget/Companies.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widget/Companies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Widget/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widget/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Widget/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widget/Home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Widget/Page/PageNotFound.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widget/Page/PageNotFound.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Widget/Site.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widget/Site.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Widget/UserControl/CompanyForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widget/UserControl/CompanyForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Widget/UserControl/UserControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Widget/UserControl/UserControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/20160323000556_create_user_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/20160323000556_create_user_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/20160323000557_create_user_bad_login_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/20160323000557_create_user_bad_login_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/20160323000558_create_user_data_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/20160323000558_create_user_data_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/20160323000559_create_user_reset_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/20160323000559_create_user_reset_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/20160323184626_create_company_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/20160323184626_create_company_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Default.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Default.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/content/Companies.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/content/Companies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/content/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/content/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/content/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/content/Home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/content/Page/PageNotFound.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/content/Page/PageNotFound.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/content/UserControl/CompanyForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/content/UserControl/CompanyForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +227,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "version-3",
+    "git-widget-placeholder": "v3-development",
     "last_opened_file_path": "/Volumes/Data/Workspace/pecee-project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -317,7 +280,7 @@
       <workItem from="1522356114781" duration="2050000" />
       <workItem from="1522360506872" duration="159000" />
       <workItem from="1523053782175" duration="6000" />
-      <workItem from="1730315474161" duration="2269000" />
+      <workItem from="1730315474161" duration="2454000" />
     </task>
     <servers />
   </component>

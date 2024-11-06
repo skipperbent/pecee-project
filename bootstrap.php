@@ -13,11 +13,11 @@ if (isset($app['db']) === true) {
 
     if (app()->getDebugEnabled() === true) {
 
-        $db->registerEvent('before-*', function (\Pecee\Pixie\Event\EventArguments $e) {
+        $db->registerEvent('before-*', static function (\Pecee\Pixie\Event\EventArguments $e) {
             debug('db', 'START QUERY: %s', str_replace('%', '%%', $e->getQuery()->getRawSql()));
         });
 
-        $db->registerEvent('after-*', function (\Pecee\Pixie\Event\EventArguments $e) {
+        $db->registerEvent('after-*', static function (\Pecee\Pixie\Event\EventArguments $e) {
             debug('db', 'END QUERY: %s', str_replace('%', '%%', $e->getQuery()->getRawSql()));
         });
     }
@@ -27,17 +27,15 @@ if (isset($app['db']) === true) {
 
 if (count(app()->getModules()) > 0) {
 
-    spl_autoload_register(function ($class) {
+    spl_autoload_register(static function ($class) {
         $file = explode('\\', $class);
         $app = array_shift($file);
-        $file = join(DIRECTORY_SEPARATOR, $file) . '.php';
 
         $module = app()->getModule($app);
 
         if ($module !== null) {
-            require_once $module . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . $file;
+            require_once $module . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . join(DIRECTORY_SEPARATOR, $file) . '.php';
         }
-
     });
 }
 

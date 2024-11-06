@@ -1,11 +1,6 @@
 <?php
 
 /* ---------- Configuration start ---------- */
-
-// Example usage: Registry
-// $key = \Pecee\Registry::getInstance();
-// $key->set('StuffToSave', 'ValueToRetrieve');
-
 app()->translation->setProvider(new \Pecee\Translation\Providers\XmlTranslateProvider());
 app()->setDefaultLocale('en_gb');
 app()->setLocale('en_gb');

@@ -17,8 +17,6 @@ class Companies extends Site
      */
     public function __construct(?int $companyId = null)
     {
-        parent::__construct();
-
         $this->companyId = $companyId;
     }
 

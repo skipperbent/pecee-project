@@ -9,7 +9,7 @@ abstract class Site extends Widget
 {
     protected Menu $mainMenu;
 
-    public function __construct()
+    public function onInit(): void
     {
         // GetSite contains information about the site - here we can add javascript and change styling etc.
         $this->getSite()
